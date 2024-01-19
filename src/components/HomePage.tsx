@@ -28,6 +28,7 @@ const HomePage = () => {
           <p className="fast-secure">Fast, secure and legally binding</p>
         </div>
       </div>
+
       <div className="features">
         <p className="e-sign">E-signature</p>
         <p className="e-sign-dicription">
@@ -53,6 +54,20 @@ const HomePage = () => {
           <div className="second-feature"></div>
         </div>
       </div>
+      <section className="features-section">
+        <div className="container">
+          <ul className="features-list">
+            <li>Easy Signature Creation</li>
+            <li>Document Integration</li>
+            <li>Multi-Platform Support</li>
+            <li>Secure Authentication</li>
+            <li>Time-Stamped Signatures</li>
+            <li>Seamless Collaboration</li>
+          </ul>
+
+          {/* <img src="images/holding-phone.jpg" alt="Man holding phone"> */}
+        </div>
+      </section>
       <div className="bill-plan">
         <p className="b-p">We have a plan for you</p>
         <p className="b-p-decription">

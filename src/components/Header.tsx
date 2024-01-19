@@ -38,7 +38,7 @@ const Header = () => {
             <Link to="/documents" className="link">
               <div className="header-document">
                 <FileStack className="header-icn" />
-                <div className="documentation">My Documentation</div>
+                <div className="documentation my-doc">My Documentation</div>
               </div>
             </Link>
           ) : (

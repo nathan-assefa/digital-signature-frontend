@@ -239,18 +239,18 @@
   margin-right: auto;
 }
 
-.two-features {
+.features .two-features {
   margin-top: 3em;
 }
 
-.two-features .srch-check,
+.features .two-features .srch-check,
 .two-features .heart {
   color: #2893df;
   height: 18px;
   width: 18px;
 }
 
-.two-features .fc {
+.features .two-features .fc {
   font-weight: bold;
   line-height: 24px;
   font-family: Lato;
@@ -259,7 +259,7 @@
   color: rgb(63, 61, 61);
 }
 
-.two-features .feature-described {
+.features .two-features .feature-described {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -270,7 +270,7 @@
   font-family: Lato;
 }
 
-.two-features .first-f-d {
+.features .two-features .first-f-d {
   margin-bottom: 2em;
 }
 
@@ -435,25 +435,28 @@
 
   .two-features {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 3em;
   }
 
-  .two-features .srch-check,
+  .features .two-features .srch-check,
   .two-features .heart {
-    height: 22px;
-    width: 22px;
+    height: 25px;
+    width: 25px;
   }
 
-  .two-features .fc {
-    font-size: 16px;
+  .features .two-features .fc {
+    font-size: 18px;
+    color: rgb(24, 23, 23);
   }
 
-  .two-features .feature-described {
+  .features .two-features .feature-described {
     width: 40%;
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  .two-features .first-f-d {
+  .features .two-features .first-f-d {
     margin-bottom: unset;
   }
 

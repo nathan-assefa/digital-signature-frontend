@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+:root {
+  --blue-color: #4b9cd7;
+}
+
+.header-wrapper {
+  background: white;
+  color: var(--blue-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  height: 4em;
+  font-family: Lato;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left .e-signature {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-color);
+}
+
+.header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.header-right .documentation {
+  display: none;
+}
+
+.header-profile,
+.header-document {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.user-name {
+  display: none;
+}
+
+.header-icn {
+  --tw-text-opacity: 1;
+  color: rgb(168, 161, 161);
+  height: 18px;
+  width: 18px;
+  margin-right: 0.3em;
+}
+
+.circle-user-round {
+  margin-left: 1em;
+  margin-right: -1em;
+  width: 24px;
+  height: 24px;
+}
+
+.right-side-pop-up-menu {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 2em;
+}
+
+.right-menu {
+  background: white;
+  min-height: 366px;
+  width: 170px;
+  padding-top: 0.5em;
+  padding-left: 1em;
+  margin-left: 1em;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  border: 1px solid rgb(197, 189, 189);
+}
+
+.menu-icn {
+  --tw-text-opacity: 1;
+  color: black;
+  height: 18px;
+  width: 18px;
+  margin-right: 1em;
+}
+
+.icon-and-name {
+  display: flex;
+  align-items: center;
+}
+
+.icon-name {
+  font-size: 13px;
+  font-family: Lato;
+  color: black;
+}
+
+.logout-user {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 850px) {
+  .header-left .e-signature {
+    font-size: 18px;
+  }
+
+  .header-right .documentation {
+    display: unset;
+    margin-right: 1em;
+  }
+
+  .user-name {
+    display: unset;
+    text-transform: capitalize;
+  }
+
+  .header-icn {
+    height: 18px;
+    width: 18px;
+  }
+
+  .circle-user-round {
+    margin-left: unset;
+    margin-right: 0.3em;
+  }
+}

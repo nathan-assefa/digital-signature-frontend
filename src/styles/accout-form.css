@@ -1,0 +1,62 @@
+:root {
+  --blue-color: #4b9cd7;
+  --bold-blue-color: #1569a6;
+}
+
+.account-label {
+  font-family: Lato, "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(160, 154, 154, 0.87);
+}
+
+.account-input {
+  border: none;
+  border-bottom: 1px solid rgb(197, 189, 189);
+  display: block;
+  margin-bottom: 3em;
+  outline: none;
+  width: 95%;
+  color: rgb(139, 125, 125);
+}
+
+.account-save {
+  width: 88px;
+  height: 36px;
+  background: var(--blue-color);
+  border: none;
+  color: white;
+  font-family: Lato, "Open Sans", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 850px) {
+  .account-label {
+    font-family: Lato, "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgba(160, 154, 154, 0.87);
+  }
+
+  .account-save {
+    width: 88px;
+    height: 36px;
+    background: var(--blue-color);
+    border: none;
+    color: white;
+    font-family: Lato, "Open Sans", sans-serif;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .account-input {
+    width: 49em;
+  }
+}

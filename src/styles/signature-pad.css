@@ -1,0 +1,49 @@
+.signature-canvas {
+  position: absolute;
+  bottom: 0;
+}
+
+.pop-up-pad {
+  width: 305px;
+  height: 200px;
+}
+
+.sigCanvas {
+  background: #4b9cd7;
+}
+
+.sign-bord {
+  background: white;
+  border: 1px solid rgb(197, 189, 189);
+}
+
+.sign-canvas-footer {
+  display: flex;
+  align-items: center;
+  /* margin-top: 1em; */
+}
+
+.sign-canvas-footer .handle-clear,
+.sign-canvas-footer .handle-generator {
+  width: 190.3px;
+  height: 34px;
+  color: white;
+  font-weight: bold;
+  line-height: 21px;
+  font-size: 12px;
+  font-family: Lato;
+  border: 2px solid white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: black;
+  cursor: pointer;
+}
+
+.loading-spinner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  width: 1000px;
+  height: 1000px;
+}

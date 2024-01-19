@@ -44,9 +44,6 @@
 }
 
 @media screen and (min-width: 950px) {
-  .bill-label {
-    color: rgba(89, 76, 76, 0.87);
-  }
   .bill-input {
     width: 49em;
   }

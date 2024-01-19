@@ -60,7 +60,11 @@ const Header = () => {
           <div ref={navRef} className="right-side-pop-up-menu">
             <div className="right-menu">
               <div>
-                <Link to="/" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <Home className="menu-icn" />
@@ -68,7 +72,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/account" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/account"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <CircleUser className=" menu-icn" />
@@ -76,7 +84,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/documents" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/documents"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name ">
                       <FileStack className="menu-icn" />
@@ -84,7 +96,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/signature" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/signature"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <PencilLine className="menu-icn" />
@@ -92,7 +108,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/templates" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/templates"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <BookDashed className="menu-icn" />
@@ -100,7 +120,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/billing" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/billing"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <Receipt className="menu-icn" />
@@ -108,7 +132,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/teams" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/teams"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name">
                       <Users className="menu-icn" />
@@ -116,7 +144,11 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <Link to="/users" className="link">
+                <Link
+                  onClick={() => setShowhowMenu(false)}
+                  to="/users"
+                  className="link"
+                >
                   <div className="icon-wrapper">
                     <div className="icon-and-name ">
                       <User className="menu-icn" />
@@ -124,7 +156,13 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <div onClick={logOutUser} className="icon-wrapper logout-user">
+                <div
+                  onClick={() => {
+                    setShowhowMenu(false);
+                    logOutUser();
+                  }}
+                  className="icon-wrapper logout-user"
+                >
                   <div className="icon-and-name n">
                     <LogOut className="menu-icn" />
                     <div className="icon-name">Logout</div>

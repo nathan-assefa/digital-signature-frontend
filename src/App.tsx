@@ -19,7 +19,7 @@ import DownloadDocumentLogFiles from "./pages/DownloadDocument";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { DocumentListProvider } from "./contexts/DocumentsContext";
-import PrivateRoutes from "./utils/PrivateRout";
+// import PrivateRoutes from "./utils/PrivateRout";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -42,9 +42,12 @@ function App() {
           <AuthProvider>
             <Header />
             <Routes>
-              <Route element={<PrivateRoutes />}>
+              <Route>
                 <Route path="/" element={<HomePage />} />
               </Route>
+              {/* <Route element={<PrivateRoutes />}>
+                <Route path="/" element={<HomePage />} />
+              </Route> */}
             </Routes>
             <Routes>
               <Route path="/dashbord" element={<Dashbord />} />

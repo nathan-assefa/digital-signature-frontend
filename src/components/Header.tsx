@@ -44,17 +44,21 @@ const Header = () => {
           ) : (
             <Link to="/login" className="link">
               <div className="header-document">
-                <div className="documentation">Sign in</div>
+                <div className="documentation sign-in">Sign in</div>
               </div>
             </Link>
           )}
-          <div
-            onClick={() => setShowhowMenu((prev) => !prev)}
-            className="header-profile"
-          >
-            <CircleUserRound className="circle-user-round header-icn" />
-            {username ? <div className="user-name">{username}</div> : null}
-          </div>
+          {username ? (
+            <div
+              onClick={() => setShowhowMenu((prev) => !prev)}
+              className="header-profile"
+            >
+              <CircleUserRound className="circle-user-round header-icn" />
+              <div className="user-name">{username}</div>
+            </div>
+          ) : (
+            <button className="get-started">Get started</button>
+          )}
         </div>
         {showMenu && (
           <div ref={navRef} className="right-side-pop-up-menu">

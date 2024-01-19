@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/7_auth.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-image: url("../images/7_auth.jpg"); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
 }
 
 .prompt-user-to-register {

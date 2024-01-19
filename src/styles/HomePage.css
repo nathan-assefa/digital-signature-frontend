@@ -169,7 +169,8 @@ section.features-section {
   width: 90%;
   text-align: center;
   font-family: Poppins;
-  font-size: 13px;
+  /* font-size: 13px; */
+  font-size: 15px;
   margin-left: 1em;
   margin-top: -0.6em;
   margin-bottom: 4em;
@@ -275,7 +276,8 @@ ul.features-list li:before {
 
 .features .e-sign {
   color: var(--blue-color);
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 20px;
   line-height: 24px;
   font-family: Lato;
   font-weight: 700;
@@ -283,7 +285,8 @@ ul.features-list li:before {
 
 .features .e-sign-dicription {
   color: rgb(63, 61, 61);
-  font-size: 13px;
+  /* font-size: 13px; */
+  font-size: 15px;
   width: 93%;
   line-height: 13px;
   font-family: Lato;
@@ -309,7 +312,8 @@ ul.features-list li:before {
   font-weight: bold;
   line-height: 24px;
   font-family: Lato;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 17px;
   margin-top: -0.1em;
   color: rgb(63, 61, 61);
 }
@@ -319,7 +323,8 @@ ul.features-list li:before {
   margin-left: auto;
   margin-right: auto;
   line-height: 20px;
-  font-size: 13px;
+  /* font-size: 13px; */
+  font-size: 14px;
   margin-top: -0.5em;
   color: rgb(97, 90, 90);
   font-family: Lato;
@@ -338,7 +343,8 @@ ul.features-list li:before {
 
 .bill-plan .b-p {
   color: black;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 22px;
   line-height: 24px;
   font-family: Lato;
   font-weight: bold;
@@ -347,7 +353,11 @@ ul.features-list li:before {
 .bill-plan .b-p-decription {
   text-align: center;
   font-family: Lato;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   color: rgb(93, 88, 88);
   line-height: 21px;
   font-weight: lighter;
@@ -535,6 +545,13 @@ ul.features-list li:before {
 
   .two-plans .professional {
     margin-bottom: unset;
+  }
+
+  .bill-plan .b-p-decription {
+    font-size: 14px;
+    width: unset;
+    margin-left: unset;
+    margin-right: unset;
   }
 
   .b-price {

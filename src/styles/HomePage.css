@@ -233,6 +233,7 @@ section.features-section {
   background: #4c6678;
   color: white;
   margin-top: 5em;
+  position: relative;
 }
 
 ul.features-list {
@@ -264,8 +265,17 @@ ul.features-list li:before {
   margin-right: 0.5em;
 }
 
-.features-section img {
-  display: none;
+.features-section .signing-picuture {
+  /* display: none; */
+  display: block;
+  background-image: url("../images/sign-3.jpg");
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  width: 170px;
+  bottom: -5em;
+  z-index: 9999;
+  height: 130px;
 }
 
 /* features */
@@ -336,7 +346,7 @@ ul.features-list li:before {
 
 /*bill pan */
 .bill-plan {
-  margin-top: 5em;
+  margin-top: 8em;
   font-family: Lato;
   text-align: center;
 }
@@ -496,6 +506,14 @@ ul.features-list li:before {
   .sign-anywhere {
     color: white;
     font-size: 16px;
+  }
+
+  .features-section .signing-picuture {
+    right: 0;
+    width: 350px;
+    bottom: -2em;
+    z-index: 9999;
+    height: 330px;
   }
 
   /* features */

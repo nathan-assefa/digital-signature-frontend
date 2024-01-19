@@ -65,7 +65,7 @@ const HomePage = () => {
             <li>Seamless Collaboration</li>
           </ul>
 
-          {/* <img src="images/holding-phone.jpg" alt="Man holding phone"> */}
+          <div className="signing-picuture"></div>
         </div>
       </section>
       <div className="bill-plan">

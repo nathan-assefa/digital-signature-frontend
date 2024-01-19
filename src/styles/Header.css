@@ -141,9 +141,11 @@
     font-size: 18px;
   }
 
-  .header-right .documentation {
+  .header-right .documentation,
+  .user-name {
     display: unset;
     margin-right: 1em;
+    font-size: 16px;
   }
 
   .user-name {
@@ -152,8 +154,8 @@
   }
 
   .header-icn {
-    height: 18px;
-    width: 18px;
+    height: 22px;
+    width: 22px;
   }
 
   .circle-user-round {

@@ -16,6 +16,7 @@ const DocumentSignPage = () => {
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages);
+    setPageNumber(numPages);
   }
 
   const { id: signDocumentId } = useParams();
@@ -41,9 +42,9 @@ const DocumentSignPage = () => {
             renderAnnotationLayer={false}
           />
         </Document>
-        {/* <p>
-        Page {pageNumber} of {numPages}
-      </p> */}
+        <p>
+          Page {pageNumber} of {numPages}
+        </p>
       </div>
       <div className="signature-canvas pop-up">
         {displaySignCanvas && (

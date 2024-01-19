@@ -91,6 +91,23 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <section className="testimonials-section">
+        <div className="container">
+          <ul>
+            <li>
+              <div className="testimony-picture"></div>
+
+              <blockquote>
+                "SignRequest transformed the way I handle documents. It's
+                intuitive, secure, and streamlined, making business transactions
+                effortlessly efficient. Highly recommend!"
+              </blockquote>
+              <cite>- Nathan Assefa</cite>
+            </li>
+          </ul>
+          <div className="testimony-right"></div>
+        </div>
+      </section>
     </div>
   );
 };

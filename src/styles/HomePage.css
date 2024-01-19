@@ -439,6 +439,45 @@ ul.features-list li:before {
   border-radius: 20px;
 }
 
+/* Testimonial section*/
+.testimonials-section {
+  background: var(--primary-color);
+  color: white;
+  padding: 5em 0;
+}
+
+.testimonials-section li {
+  background: var(--blue-color);
+  text-align: center;
+  padding: 2em 1em;
+  width: 59%;
+  margin: 0 auto 5em auto;
+  border-radius: 1em;
+}
+
+.testimony-picture {
+  background-image: url("../images/Nathan.JPG");
+  background-size: cover;
+  width: 5em;
+  height: 5em;
+  border: 5px solid var(--blue-color);
+  border-radius: 50%;
+  margin-top: -4.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimony-right {
+  background-image: url("../images/illustration.svg");
+  background-size: cover;
+  width: 75%;
+  margin-right: 12em;
+  height: 250px;
+  margin-bottom: -5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (min-width: 850px) {
   .homepage {
     display: grid;
@@ -580,6 +619,28 @@ ul.features-list li:before {
   .bill-plan .learn-more {
     width: 140.3px;
     font-size: 12px;
+  }
+
+  .testimonials-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .testimonials-section li {
+    width: 35%;
+    margin: 0 auto 5em auto;
+  }
+
+  .testimony-right {
+    background-image: url("../images/illustration.svg");
+    background-size: cover;
+    width: 35%;
+    margin-right: 12em;
+    height: 250px;
+    margin-top: -4em;
+    margin-bottom: unset;
+    margin-left: unset;
   }
 }
 

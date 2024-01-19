@@ -57,7 +57,9 @@ const Header = () => {
               <div className="user-name">{username}</div>
             </div>
           ) : (
-            <button className="get-started">Get started</button>
+            <Link to="/billing" className="link">
+              <button className="get-started">Get started</button>
+            </Link>
           )}
         </div>
         {showMenu && (

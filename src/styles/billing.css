@@ -52,6 +52,7 @@
   height: 180px;
   text-align: center;
   background-color: #f8f8f8;
+  margin-bottom: 1em;
 }
 
 .billings-wrapper .plan:hover {
@@ -108,6 +109,7 @@
 
 .billing-subscription-prompt {
   margin-right: 2em;
+  margin-left: -1em;
 }
 
 .detail-body {
@@ -126,11 +128,15 @@
   color: black;
 }
 
+.user-account-from {
+  margin-left: -1em;
+}
+
 .payment-method {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 2.6em;
+  margin-left: 1.6em;
   font-size: 12px;
   line-height: 24px;
   color: #222222;
@@ -138,8 +144,8 @@
 }
 
 .payment-btn {
-  width: 190.3px;
-  height: 34px;
+  min-width: 109.3px;
+  min-height: 34px;
   color: var(--blue-color);
   font-weight: bold;
   line-height: 21px;
@@ -155,20 +161,9 @@
 }
 
 .payment-btn:hover {
-  width: 190.3px;
-  height: 34px;
   color: white;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 12px;
-  font-family: Lato;
-  border: none;
-  margin-top: 2em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
   background: var(--blue-color);
-  cursor: pointer;
 }
 
 .billings-right-col .user-notification {
@@ -214,6 +209,10 @@
   cursor: pointer;
 }
 
+.user-subscribe-btn:hover {
+  background: rgb(52, 129, 52);
+}
+
 @media screen and (min-width: 850px) {
   .billings-wrapper {
     display: grid;
@@ -240,5 +239,23 @@
     background-color: #f8f8f8;
     margin-left: unset;
     margin-right: unset;
+    margin-bottom: unset;
+  }
+
+  .user-account-from {
+    margin-left: unset;
+  }
+
+  .billing-subscription-prompt {
+    margin-left: unset;
+  }
+
+  .payment-method {
+    margin-left: 2.6em;
+  }
+
+  .payment-btn {
+    width: 190.3px;
+    height: 34px;
   }
 }

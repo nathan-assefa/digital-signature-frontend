@@ -13,7 +13,7 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 20px;
-  color: rgba(89, 76, 76, 0.87);
+  color: rgba(34, 29, 29, 0.87);
 }
 
 .bill-input {
@@ -22,7 +22,7 @@
   display: block;
   margin-bottom: 1em;
   outline: none;
-  width: 49em;
+  width: 95%;
   height: 2.4em;
 }
 
@@ -43,19 +43,28 @@
   font-weight: 600;
 }
 
-.bill-form-wrapper .firt-and-last-name {
-  display: flex;
-}
+@media screen and (min-width: 950px) {
+  .bill-label {
+    color: rgba(89, 76, 76, 0.87);
+  }
+  .bill-input {
+    width: 49em;
+  }
 
-.bill-form-wrapper .first-name-input {
-  width: 20em;
-}
+  .bill-form-wrapper .firt-and-last-name {
+    display: flex;
+  }
 
-.bill-form-wrapper .last-name-input {
-  width: 26.5em;
-}
+  .bill-form-wrapper .first-name-input {
+    width: 20em;
+  }
 
-.bill-form-wrapper .bill-lastName,
-.bill-form-wrapper .last-name-input {
-  margin-left: 2em;
+  .bill-form-wrapper .last-name-input {
+    width: 26.5em;
+  }
+
+  .bill-form-wrapper .bill-lastName,
+  .bill-form-wrapper .last-name-input {
+    margin-left: 2em;
+  }
 }

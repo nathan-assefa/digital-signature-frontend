@@ -20,8 +20,10 @@
 .side-bar-icon {
   --tw-text-opacity: 1;
   color: white;
-  height: 18px;
-  width: 18px;
+  /* height: 18px;
+  width: 18px; */
+  height: 21px;
+  width: 21px;
 }
 
 .single-row-right {
@@ -42,7 +44,8 @@
 .right-col {
   background: #1569a6;
   height: 391px;
-  width: 180px;
+  /* width: 180px; */
+  width: 190px;
   padding-top: 4.3em;
   position: relative;
   margin-top: 1.2em;

@@ -20,7 +20,7 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .create-template {
@@ -29,7 +29,8 @@
   color: var(--blue-color);
   font-weight: bold;
   line-height: 21px;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   border: 1px solid var(--blue-color);
   margin-top: 2em;
@@ -43,7 +44,8 @@
 .upgrate-template {
   text-align: center;
   font-family: Lato;
-  font-size: 11.6px;
+  /* font-size: 11.6px; */
+  font-size: 13px;
   color: #779ae0;
   line-height: 21px;
   font-weight: lighter;
@@ -65,6 +67,7 @@
   }
 
   .upgrate-template {
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: 13.5px;
   }
 }

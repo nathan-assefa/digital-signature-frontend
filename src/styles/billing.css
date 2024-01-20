@@ -18,14 +18,15 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .choose-billing {
   color: #222222;
   font-weight: bold;
   line-height: 24px;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 20px;
   font-family: Lato, "Open Sans", sans-serif;
   margin-top: 2em;
   text-align: center;
@@ -63,13 +64,15 @@
   color: var(--blue-color);
   font-weight: 600;
   line-height: 24px;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 16.5px;
 }
 
 .plan-body,
 .plan-price,
 .price-range {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14.5px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -88,7 +91,8 @@
 .subscription-prompt {
   line-height: 24px;
   font-weight: lighter;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   color: #e36d65;
   text-align: center;
   letter-spacing: 0.4px;
@@ -101,7 +105,8 @@
 .billing-subscription-info {
   display: flex;
   margin-left: 2.6em;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   color: #222222;
   font-weight: 600;
@@ -113,7 +118,8 @@
 }
 
 .detail-body {
-  font-size: 10px;
+  /* font-size: 10px; */
+  font-size: 12px;
   line-height: 20px;
   color: #696e7a;
   font-weight: lighter;
@@ -123,7 +129,8 @@
 }
 
 .detail-body span {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-weight: bold;
   color: black;
 }
@@ -137,7 +144,8 @@
   justify-content: space-around;
   align-items: center;
   margin-left: 1.6em;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   color: #222222;
   font-weight: 600;
@@ -167,9 +175,10 @@
 }
 
 .billings-right-col .user-notification {
-  line-height: 24px;
+  line-height: 16px;
   font-weight: lighter;
-  font-size: 10px;
+  /* font-size: 10px; */
+  font-size: 11.7px;
   color: rgb(158, 144, 144);
   text-align: center;
   letter-spacing: 0.4px;
@@ -182,7 +191,8 @@
 .billings-right-col .check-box {
   line-height: 24px;
   font-weight: lighter;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   color: rgb(120, 109, 109);
   text-align: center;
   letter-spacing: 0.4px;
@@ -198,7 +208,8 @@
   color: white;
   font-weight: bold;
   line-height: 21px;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   border: none;
   margin-top: 2em;

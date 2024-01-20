@@ -3,7 +3,7 @@ import { useDocumentList } from "../contexts/DocumentsContext";
 import Magnifier from "../assets/Magnifier";
 import TimeAgo from "../utils/timeFormat";
 import Modal from "../components/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PopUpToSignDocument from "../components/PopUpToSignDocument";
 import { Link } from "react-router-dom";
 import { Files, Clock3 } from "lucide-react";
@@ -12,6 +12,10 @@ import { Files, Clock3 } from "lucide-react";
 const Docuement = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { search, setSearch, document } = useDocumentList();
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="document-wrapper">

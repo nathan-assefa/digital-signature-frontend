@@ -11,7 +11,8 @@
 .bill-label {
   font-family: Lato, "Open Sans", sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 20px;
   color: rgba(34, 29, 29, 0.87);
 }
@@ -27,7 +28,8 @@
 }
 
 .bill-input::placeholder {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 13px;
   color: rgb(167, 160, 160);
 }
 
@@ -39,7 +41,8 @@
   color: white;
   font-family: Lato, "Open Sans", sans-serif;
   line-height: 24px;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 15px;
   font-weight: 600;
 }
 

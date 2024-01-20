@@ -15,7 +15,7 @@ type UserBillingFormProps = {
     city?: string;
     country?: string;
   }) => Promise<void>;
-  autoFocus: boolean;
+  autoFocus?: boolean;
 };
 
 const BillingForm: React.FC<UserBillingFormProps> = ({

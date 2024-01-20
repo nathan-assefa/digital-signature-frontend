@@ -4,16 +4,21 @@ import useProfile from "../hooks/useUserAccount";
 import axios from "axios";
 import AuthToken from "../utils/AuthToken";
 import LeftSideBar from "../components/LeftSideBar";
+import { useEffect } from "react";
 // import { useState } from "react";
 
 const Account = () => {
   // const [error, setError] = useState<string | null>(null);
   const { profile, isLoading, isError } = useProfile();
-  console.log("first_name: ", profile?.user.first_name);
 
   const accessToken = AuthToken();
 
   const queryClient = useQueryClient();
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   interface UpdatedProfile {
     first_name: string;

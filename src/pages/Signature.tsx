@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import LeftSideBar from "../components/LeftSideBar";
 
 const Signature = () => {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="signatures-wrapper">

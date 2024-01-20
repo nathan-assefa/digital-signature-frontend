@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import LeftSideBar from "../components/LeftSideBar";
 import { Link } from "react-router-dom";
 // import Template from "../assets/templates";
 
 const Templates = () => {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="templates-wrapper">

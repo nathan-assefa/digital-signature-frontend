@@ -3,6 +3,7 @@ import BillingForm from "../forms/BillingForm";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import AuthToken from "../utils/AuthToken";
 import axios from "axios";
+import { useEffect } from "react";
 // import { useState } from "react";
 
 const Billing = () => {
@@ -10,6 +11,11 @@ const Billing = () => {
 
   const queryClient = useQueryClient();
   const accessToken = AuthToken();
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   interface UpdatedProfile {
     firstName: string;
@@ -154,7 +160,7 @@ const Billing = () => {
             <BillingForm
               isLoading={false}
               isError={false}
-              autoFocus={true}
+              // autoFocus={true}
               onSubmit={onRegistratingUser}
             />
             {/* {error && (

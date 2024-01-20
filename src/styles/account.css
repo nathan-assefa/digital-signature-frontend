@@ -29,14 +29,15 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .account-detail {
   margin-top: 1.5em;
   padding-left: 1.4em;
   font-weight: 600;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 19px;
   color: #222222;
   line-height: 24px;
 }

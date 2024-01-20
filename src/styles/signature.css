@@ -20,7 +20,7 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .change-signature {
@@ -29,7 +29,8 @@
   color: white;
   font-weight: bold;
   line-height: 21px;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   border: none;
   margin-top: 2em;

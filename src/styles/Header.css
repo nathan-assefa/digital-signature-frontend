@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.logo {
+  margin-left: -1em;
+}
+
 .header-left .e-signature {
   /* font-size: 14px; */
   font-size: 17px;
@@ -133,6 +137,9 @@
 }
 
 @media screen and (min-width: 850px) {
+  .logo {
+    margin-left: unset;
+  }
   .get-started {
     width: 10em;
     height: 34px;

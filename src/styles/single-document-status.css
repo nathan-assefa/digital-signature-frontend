@@ -29,7 +29,8 @@
 .single-document-header .docs {
   color: white;
   font-weight: bold;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   line-height: 24px;
 }
@@ -37,7 +38,8 @@
 .single-document-header .docs-name {
   color: white;
   font-weight: lighter;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   line-height: 24px;
 }
@@ -59,7 +61,8 @@
 }
 
 .single-doc-detail .doc-name {
-  font-size: 12.8px;
+  /* font-size: 12.8px; */
+  font-size: 14.8px;
   color: #443f3f;
   font-weight: 600;
   line-height: 24px;
@@ -69,7 +72,8 @@
 .single-doc-detail .signed-date,
 .document-id,
 .is-signed {
-  font-size: 11px;
+  /* font-size: 11px; */
+  font-size: 12.8px;
   line-height: 8px;
   font-weight: lighter;
   font-family: Lato;
@@ -107,7 +111,8 @@
   color: white;
   font-weight: bold;
   line-height: 21px;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   font-family: Lato;
   border: none;
   margin-top: 2em;
@@ -129,7 +134,8 @@
 }
 
 .recipient-info .recipient {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   font-weight: 600;
   font-family: Lato;
@@ -149,7 +155,8 @@
 .recipient-info .sender-email,
 .recivier-email {
   color: var(--bold-blue-color);
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
 
   font-weight: 600;
@@ -167,7 +174,8 @@
 .recipient-info .doc-stat,
 .recivier-signed,
 .doc-sign-date {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   font-weight: 600;
   color: rgb(179, 168, 168);
@@ -184,7 +192,8 @@
 }
 
 .sender-message .email-info {
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   font-weight: 600;
   font-family: Lato;
@@ -192,7 +201,8 @@
 }
 
 .sender-message .sender-msg {
-  font-size: 11px;
+  /* font-size: 11px; */
+  font-size: 13px;
   line-height: 24px;
   font-weight: 600;
   font-family: Lato;
@@ -205,7 +215,8 @@
   padding-top: 0.3em;
   padding-bottom: 0.3em;
   border-left: 1px solid rgb(218, 211, 211);
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 14px;
   line-height: 24px;
   font-weight: 600;
   font-family: Lato;

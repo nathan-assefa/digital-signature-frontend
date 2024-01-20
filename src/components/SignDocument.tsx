@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, useRef } from "react";
 import AuthToken from "../utils/AuthToken";
-import { UserX } from "lucide-react";
+import { MessageCircleQuestion, UserX } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { PacmanLoader } from "react-spinners";
@@ -24,6 +24,9 @@ interface EmailFormProps {}
 const EmailForm: React.FC<EmailFormProps> = () => {
   const [emails, setEmails] = useState<string[]>([]);
   const [files, setFiles] = useState<FileList | null>(null);
+  const [showHelp, setShowHelp] = useState(false);
+  const [showHelpContact, setShowHelpContact] = useState(false);
+  const [showHelpMessage, setShowHelpMessage] = useState(false);
   const queryClient = useQueryClient();
 
   const accessToken = AuthToken();
@@ -161,6 +164,19 @@ const EmailForm: React.FC<EmailFormProps> = () => {
           </div>
           <div className="add-contact" onClick={handleAddEmail}>
             <span className="plus-sign">+</span> Add contact
+            {showHelp && (
+              <MessageCircleQuestion
+                onMouseOver={() => setShowHelpContact(true)}
+                onMouseOut={() => setShowHelpContact(false)}
+                className="help-add-contact"
+              />
+            )}
+            {showHelpContact && (
+              <p className="help-add-cont-desc help-decription">
+                Add the email address of each person that needs to sign or
+                recieve a copy of the document
+              </p>
+            )}
           </div>
         </div>
 
@@ -174,10 +190,27 @@ const EmailForm: React.FC<EmailFormProps> = () => {
               setMessage(e.target.value)
             }
           />
+          {showHelp && (
+            <MessageCircleQuestion
+              onMouseOver={() => setShowHelpMessage(true)}
+              onMouseOut={() => setShowHelpMessage(false)}
+              className="help-message"
+            />
+          )}
+          {showHelpMessage && (
+            <p className=" help-msg-desc help-decription">
+              Optionally add message to include in the email to your contacts
+            </p>
+          )}
         </div>
 
         <div className="left-col-footer">
-          <button className="btn help-btn">Help</button>
+          <button
+            onClick={() => setShowHelp((prev) => !prev)}
+            className="btn help-btn"
+          >
+            Help
+          </button>
 
           {isLoading ? (
             <PacmanLoader color="#36d7b7" />
@@ -214,149 +247,3 @@ const EmailForm: React.FC<EmailFormProps> = () => {
 };
 
 export default EmailForm;
-
-// import React, { useState, ChangeEvent, useRef } from "react";
-// import AuthToken from "../utils/AuthToken";
-// import { UserX } from "lucide-react";
-// import { Toaster, toast } from "sonner";
-
-// interface EmailFormProps {}
-
-// const EmailForm: React.FC<EmailFormProps> = () => {
-//   const [emails, setEmails] = useState<string[]>([]);
-//   const [files, setFiles] = useState<FileList | null>(null);
-
-//   const accessToken = AuthToken();
-
-//   const [message, setMessage] = useState("");
-//   const fileInputRef = useRef<HTMLInputElement>(null);
-
-//   const handleEmailChange = (index: number, value: string) => {
-//     const newEmails = [...emails];
-//     newEmails[index] = value;
-//     setEmails(newEmails);
-//   };
-
-//   const handleAddEmail = () => {
-//     setEmails([...emails, ""]);
-//   };
-
-//   const handleRemoveEmail = (index: number) => {
-//     const newEmails = [...emails];
-//     newEmails.splice(index, 1);
-//     setEmails(newEmails);
-//   };
-
-//   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-//     if (e.target.files) {
-//       setFiles(e.target.files);
-//     }
-//   };
-
-//   const handleButtonClick = () => {
-//     // Trigger the hidden file input
-//     fileInputRef.current?.click();
-//   };
-
-//   const handleSendRequest = () => {
-//     const formData = new FormData();
-
-//     // Add emails to formData
-//     formData.append("recipient_emails", JSON.stringify(emails));
-//     formData.append("message", JSON.stringify(message));
-
-//     // Add files to formData
-//     if (files) {
-//       for (let i = 0; i < files.length; i++) {
-//         formData.append("files", files[i]);
-//       }
-//     }
-
-//     // Send a POST request to the Django backend
-//     fetch("http://127.0.0.1:8000/api/send-signing-request/", {
-//       method: "POST",
-//       headers: {
-//         Authorization: "Bearer " + String(accessToken),
-//       },
-//       body: formData,
-//     })
-//       .then((response) => response.json())
-//       .then((data) => console.log(data))
-//       .catch((error) => console.error("Error:", error));
-//   };
-
-//   return (
-//     <div className="document-sign-wrapper">
-//       <div className="signing-related-inputes">
-//         <div className="files-input">
-//           {/* File input for uploading files */}
-//           {/* Hidden file input */}
-//           <input
-//             type="file"
-//             ref={fileInputRef}
-//             style={{ display: "none" }}
-//             onChange={handleFileChange}
-//             multiple
-//           />
-
-//           {/* Custom-styled button */}
-//           <button className="add-file select-file" onClick={handleButtonClick}>
-//             {files ? `Selected: ${setFiles.length} files` : "Add files to sign"}
-//           </button>
-//         </div>
-
-//         <div className="emailes-input-btn">
-//           <div className="email-input-btn">
-//             {emails.map((email, index) => (
-//               <div key={index} className="email-input-wrapper">
-//                 <input
-//                   type="email"
-//                   value={email}
-//                   className="email-input"
-//                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
-//                     handleEmailChange(index, e.target.value)
-//                   }
-//                 />
-//                 <button onClick={() => handleRemoveEmail(index)}>
-//                   <UserX className="user-x" />
-//                 </button>
-//               </div>
-//             ))}
-//           </div>
-//           <div className="add-contact" onClick={handleAddEmail}>
-//             <span className="plus-sign">+</span> Add contact
-//           </div>
-//         </div>
-
-//         <div className="sender-message">
-//           {/* Message input */}
-//           <textarea
-//             className="message-input"
-//             placeholder="Message"
-//             value={message}
-//             onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-//               setMessage(e.target.value)
-//             }
-//           />
-//         </div>
-
-//         <div className="left-col-footer">
-//           <button className="btn help-btn">Help</button>
-//           <Toaster richColors />
-//           <button
-//             onClick={() => {
-//               toast.success("Document has been sent");
-//               handleSendRequest();
-//             }}
-//             className="btn sign-btn"
-//           >
-//             Sign
-//           </button>
-//           <button className="btn setting-btn">Setting</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default EmailForm;

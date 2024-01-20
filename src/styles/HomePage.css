@@ -29,6 +29,7 @@ section.features-section {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 2px 4px rgba(96, 86, 86, 0.1);
+  position: relative;
 }
 
 .signing-related-inputes .add-file {
@@ -64,6 +65,7 @@ section.features-section {
   margin-top: 1em;
   cursor: pointer;
   color: rgb(132, 123, 123);
+  position: relative;
 }
 
 .email-input-wrapper {
@@ -96,6 +98,10 @@ section.features-section {
   margin-right: 2em;
 }
 
+.sender-message {
+  position: relative;
+}
+
 .message-input {
   border: none;
   border-bottom: 1px solid #e9dddd;
@@ -115,6 +121,48 @@ section.features-section {
 .inviter-email span {
   margin-left: 8em;
 }
+.help-add-contact,
+.help-message {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  width: 19px;
+  height: 19px;
+  color: var(--blue-color);
+  margin-left: 0.3em;
+}
+
+.help-add-contact {
+  top: 0em;
+  right: 0.3em;
+}
+
+.help-message {
+  top: 1.8em;
+  right: 0.3em;
+}
+
+.help-decription {
+  position: absolute;
+  /* left: 99%; */
+  color: black;
+  min-width: 93%;
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: Lato;
+  z-index: 9999999;
+}
+
+.help-add-cont-desc {
+  top: -2em;
+}
+
+.help-msg-desc {
+  top: 2em;
+}
 
 .left-col-footer {
   margin-top: 4em;
@@ -129,6 +177,7 @@ section.features-section {
   font-weight: bold;
   font-family: Lato;
   background: none;
+  cursor: pointer;
 }
 
 .disabled-btn,
@@ -492,6 +541,48 @@ ul.features-list li:before {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  .help-add-contact,
+  .help-message {
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    width: 19px;
+    height: 19px;
+    color: var(--blue-color);
+    margin-left: 0.3em;
+  }
+
+  .help-add-contact {
+    top: 0em;
+    right: 0.3em;
+  }
+
+  .help-message {
+    top: 1.8em;
+    right: 0.3em;
+  }
+
+  .help-decription {
+    position: absolute;
+    left: 99%;
+    color: black;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 1em;
+    padding: 1em;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: Lato;
+  }
+
+  .help-add-cont-desc {
+    top: -2em;
+  }
+
+  .help-msg-desc {
+    top: 2em;
+  }
+
   .home-right-col {
     margin-left: 3em;
   }
@@ -667,7 +758,7 @@ ul.features-list li:before {
     bottom: -2em;
   }
 
-  /* .features-section:before {
+  .features-section:before {
     content: "";
     position: absolute;
     width: 10%;
@@ -682,7 +773,7 @@ ul.features-list li:before {
     width: 200px;
     height: 20em;
     background: url("../images/dots.svg") no-repeat;
-    left: 4.5em;
+    left: -2.5em;
     top: 2em;
-  } */
+  }
 }

@@ -1,7 +1,12 @@
 import { Heart, Pipette, SearchCheck } from "lucide-react";
 import SignDocument from "./SignDocument";
+import { useEffect } from "react";
 
 const HomePage = () => {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="homepage-wrapper">
       <div className="homepage">

@@ -68,6 +68,10 @@ section.features-section {
   position: relative;
 }
 
+.add-con-btn {
+  width: 80%;
+}
+
 .email-input-wrapper {
   display: flex;
   justify-content: space-between;

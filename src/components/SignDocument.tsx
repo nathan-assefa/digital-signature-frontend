@@ -162,12 +162,16 @@ const EmailForm: React.FC<EmailFormProps> = () => {
               </div>
             ))}
           </div>
-          <div className="add-contact" onClick={handleAddEmail}>
-            <span className="plus-sign">+</span> Add contact
+          <div className="add-contact">
+            <div onClick={handleAddEmail} className="add-con-btn">
+              <span className="plus-sign">+</span> Add contact
+            </div>
             {showHelp && (
               <MessageCircleQuestion
                 onMouseOver={() => setShowHelpContact(true)}
                 onMouseOut={() => setShowHelpContact(false)}
+                onTouchStart={() => setShowHelpContact(true)}
+                onTouchEnd={() => setShowHelpContact(false)}
                 className="help-add-contact"
               />
             )}
@@ -194,6 +198,8 @@ const EmailForm: React.FC<EmailFormProps> = () => {
             <MessageCircleQuestion
               onMouseOver={() => setShowHelpMessage(true)}
               onMouseOut={() => setShowHelpMessage(false)}
+              onTouchStart={() => setShowHelpMessage(true)}
+              onTouchEnd={() => setShowHelpMessage(false)}
               className="help-message"
             />
           )}

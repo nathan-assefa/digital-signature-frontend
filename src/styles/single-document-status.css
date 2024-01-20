@@ -153,7 +153,7 @@
 }
 
 .recipient-info .sender-email,
-.recivier-email {
+.recipient-info .recivier-email {
   color: var(--bold-blue-color);
   /* font-size: 12px; */
   font-size: 14px;
@@ -172,8 +172,8 @@
 }
 
 .recipient-info .doc-stat,
-.recivier-signed,
-.doc-sign-date {
+.recipient-info .recivier-signed,
+.recipient-info .doc-sign-date {
   /* font-size: 12px; */
   font-size: 14px;
   line-height: 24px;

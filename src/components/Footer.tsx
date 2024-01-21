@@ -5,23 +5,6 @@ const Footer = () => {
     <div className="footer">
       <footer>
         <div className="footer-container">
-          {/* <div className="container">
-            <p className="address">
-              Melrose Place, 90210
-              <br />
-              USA
-            </p>
-            <ul className="footer-links">
-              <li>
-                <a href="#">Terms of Service</a>
-              </li>
-              <li>
-                <a className="terms-privacy" href="#">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </div> */}
           <div className="footer-wrapper">
             <div className="footer-menu">
               <div className="foot-left-col">
@@ -53,6 +36,7 @@ const Footer = () => {
                 </Link>
                 <div className="single-footer-menu">Logout</div>
               </div>
+              <div className="signing-picuture"></div>
             </div>
           </div>
         </div>

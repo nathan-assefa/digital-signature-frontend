@@ -4,6 +4,8 @@ import { MessageCircleQuestion, UserX } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { PacmanLoader } from "react-spinners";
+import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 /*
 ************ why useMutation and useQueryClient ***************
@@ -19,15 +21,20 @@ import { PacmanLoader } from "react-spinners";
                   invalidate queries, refetch data, and more.
 */
 
-interface EmailFormProps {}
+interface EmailFormProps {
+  url: string;
+}
 
-const EmailForm: React.FC<EmailFormProps> = () => {
+const EmailForm: React.FC<EmailFormProps> = ({ url }) => {
   const [emails, setEmails] = useState<string[]>([]);
   const [files, setFiles] = useState<FileList | null>(null);
   const [showHelp, setShowHelp] = useState(false);
   const [showHelpContact, setShowHelpContact] = useState(false);
   const [showHelpMessage, setShowHelpMessage] = useState(false);
   const queryClient = useQueryClient();
+
+  const { username } = useAuth();
+  const navigate = useNavigate();
 
   const accessToken = AuthToken();
 
@@ -79,16 +86,13 @@ const EmailForm: React.FC<EmailFormProps> = () => {
           }
         }
 
-        const response = await fetch(
-          "http://127.0.0.1:8000/api/send-signing-request/",
-          {
-            method: "POST",
-            headers: {
-              Authorization: "Bearer " + String(accessToken),
-            },
-            body: formData,
-          }
-        );
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: "Bearer " + String(accessToken),
+          },
+          body: formData,
+        });
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -119,6 +123,11 @@ const EmailForm: React.FC<EmailFormProps> = () => {
   );
 
   const handleSendRequest = () => {
+    if (!username) {
+      // If not authenticated, redirect to the login page
+      navigate("/login");
+      return;
+    }
     mutate();
   };
 
@@ -140,7 +149,7 @@ const EmailForm: React.FC<EmailFormProps> = () => {
 
           {/* Custom-styled button */}
           <button className="add-file select-file" onClick={handleButtonClick}>
-            {files ? `Selected: ${setFiles.length} files` : "Add files to sign"}
+            {files ? `Selected: ${files.length} files` : "Add files to sign"}
           </button>
         </div>
 
@@ -148,14 +157,17 @@ const EmailForm: React.FC<EmailFormProps> = () => {
           <div className="email-input-btn">
             {emails.map((email, index) => (
               <div key={index} className="email-input-wrapper">
-                <input
-                  type="email"
-                  value={email}
-                  className="email-input"
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    handleEmailChange(index, e.target.value)
-                  }
-                />
+                <label>
+                  <input
+                    type="email"
+                    value={email}
+                    className="email-input"
+                    placeholder="Write recipient's email"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      handleEmailChange(index, e.target.value)
+                    }
+                  />
+                </label>
                 <button onClick={() => handleRemoveEmail(index)}>
                   <UserX className="user-x" />
                 </button>

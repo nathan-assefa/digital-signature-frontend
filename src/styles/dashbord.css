@@ -4,6 +4,7 @@
 
 .two-col-wrapper {
   display: flex;
+  margin-left: 3em;
 }
 
 .icon-wrapper,

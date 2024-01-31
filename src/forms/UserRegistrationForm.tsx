@@ -13,6 +13,9 @@ type UserRegistrationFormProps = {
     email: string;
   }) => Promise<void>;
   autoFocus: boolean;
+  destination?: string | undefined;
+  team_id?: string | undefined;
+  token?: string | undefined;
 };
 
 const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
@@ -20,6 +23,9 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
   isError,
   onSubmit,
   autoFocus = false,
+  destination,
+  team_id,
+  token,
 }) => {
   type PostState = {
     first_name: string;
@@ -109,7 +115,6 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
               <input
                 id="email"
                 className="email-input reg-input"
-                autoFocus={autoFocus}
                 value={email}
                 onChange={(e) =>
                   dispatch({ type: "setEmail", payload: e.target.value })
@@ -126,7 +131,6 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
               <input
                 id="firstName"
                 className="first-name-input reg-input"
-                autoFocus={autoFocus}
                 value={first_name}
                 onChange={(e) =>
                   dispatch({ type: "setFirstName", payload: e.target.value })
@@ -143,7 +147,6 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
               <input
                 id="last_name"
                 className="last-name-input reg-input"
-                autoFocus={autoFocus}
                 value={last_name}
                 onChange={(e) =>
                   dispatch({ type: "setLastName", payload: e.target.value })
@@ -158,9 +161,9 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
                 Password:
               </label>
               <input
+                type="password"
                 id="password"
                 className="password-input reg-input"
-                autoFocus={autoFocus}
                 value={password}
                 onChange={(e) =>
                   dispatch({ type: "setPassword", payload: e.target.value })
@@ -175,9 +178,9 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
                 Confirm Password:
               </label>
               <input
+                type="password"
                 id="confirm_password"
                 className="confirm-password-input reg-input"
-                autoFocus={autoFocus}
                 value={confirm_password}
                 onChange={(e) =>
                   dispatch({
@@ -195,7 +198,12 @@ const RegistrationForm: React.FC<UserRegistrationFormProps> = ({
             >
               {isLoading ? "cancel" : "Register"}
             </button>
-            <Link className="user-login" to="/login">
+            <Link
+              className="user-login"
+              to={`/login${destination ? `?destination=${destination}` : ""}${
+                team_id ? `&team_id=${team_id}` : ""
+              }${token ? `&token=${token}` : ""}`}
+            >
               Login
             </Link>
           </div>

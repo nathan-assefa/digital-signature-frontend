@@ -45,9 +45,8 @@ section.features-section {
   margin-top: 3em;
   color: white;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.3px;
-  font-weight: bold;
 }
 
 .inviter {
@@ -81,7 +80,7 @@ section.features-section {
 .email-input-wrapper button {
   background: white;
   border: none;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -93,6 +92,12 @@ section.features-section {
   width: 58%;
   height: 2.4em;
   padding-left: 2em;
+  font-size: 16px;
+}
+
+.home-left-col .email-input::placeholder {
+  font-size: 14px;
+  font-family: Lato;
 }
 
 .home-left-col .user-x {
@@ -115,6 +120,8 @@ section.features-section {
   height: 5.4em;
   margin-top: 2em;
   resize: vertical;
+  font-size: 16px;
+  font-family: Lato;
 }
 
 .message-input::placeholder {
@@ -184,6 +191,7 @@ section.features-section {
   font-family: Lato;
   background: none;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .disabled-btn,
@@ -194,7 +202,7 @@ section.features-section {
   border: none;
   border-radius: 2em;
   color: rgb(250, 223, 223);
-  font-size: 14px;
+  font-size: 16px;
   font-family: Lato;
   font-weight: bold;
 }
@@ -452,26 +460,26 @@ ul.features-list li:before {
   color: black;
   font-weight: 700;
   line-height: 24px;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .b-price {
   color: var(--blue-color);
   font-weight: 700;
   line-height: 24px;
-  font-size: 18px;
+  font-size: 19px;
   margin-top: -0.6em;
 }
 
 .per-mon {
   color: grey;
-  font-size: 12px;
+  font-size: 15px;
   margin-top: -1em;
 }
 
 .unlimited {
   color: var(--blue-color);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   margin-top: -0.5em;
 }
@@ -480,9 +488,8 @@ ul.features-list li:before {
   width: 100.3px;
   height: 34px;
   color: white;
-  font-weight: bold;
   line-height: 21px;
-  font-size: 12px;
+  font-size: 15px;
   font-family: Lato;
   border: none;
   margin-top: 2em;
@@ -508,6 +515,7 @@ ul.features-list li:before {
   width: 59%;
   margin: 0 auto 5em auto;
   border-radius: 1em;
+  font-size: 16px;
 }
 
 .testimony-picture {
@@ -641,7 +649,7 @@ ul.features-list li:before {
   .fast-secure,
   .sign-anywhere {
     color: white;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .features-section .signing-picuture {

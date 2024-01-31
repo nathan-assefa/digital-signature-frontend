@@ -3,7 +3,12 @@ import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
 type AuthContextType = {
-  loginUser: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  loginUser: (
+    e: React.FormEvent<HTMLFormElement>,
+    destination?: string | undefined,
+    team_id?: string | undefined,
+    token?: string | undefined
+  ) => Promise<void>;
   logOutUser: () => void;
   username: string | null;
   authToken: string | null;
@@ -32,7 +37,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<string | null>(initialUser);
 
   const loginUser = async (
-    e: React.FormEvent<HTMLFormElement>
+    e: React.FormEvent<HTMLFormElement>,
+    destination?: string | undefined,
+    team_id?: string | undefined,
+    token?: string | undefined
   ): Promise<void> => {
     e.preventDefault();
 
@@ -55,7 +63,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setAuthToken(accessToken);
       setUser(jwt_decode<{ username: string }>(accessToken).username);
       localStorage.setItem("authTokens", JSON.stringify(data));
-      navigate("/");
+
+      // Check if destination is provided, otherwise navigate to "/"
+      if (destination) {
+        navigate(
+          `${destination}${team_id ? `?team_id=${team_id}` : ""}${
+            token ? `&token=${token}` : ""
+          }`
+        );
+      } else {
+        navigate("/");
+      }
+
       window.location.reload();
     } else {
       alert("Something went wrong");

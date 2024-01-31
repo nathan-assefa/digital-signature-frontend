@@ -7,18 +7,25 @@ import Templates from "./pages/Templates";
 import Signature from "./pages/Signature";
 import Billing from "./pages/Billing";
 import Users from "./pages/Users";
-import Teams from "./pages/Teams";
+import CreateTeams from "./pages/CreateTeam";
 import LoginPage from "./pages/LoginPage";
 import RegisterUser from "./pages/RegisterUser";
 import DocumentSignPage from "./pages/DocumentSignPage";
 import SingleDocumentStatus from "./pages/SingleDocumentStatus";
 import DownloadDocumentLogFiles from "./pages/DownloadDocument";
+import TeamDashbord from "./pages/Team-dashbord";
+import AcceptInvitationComponent from "./pages/AcceptInvitationComponent";
+import TeamDocumentStatus from "./pages/TeamDocumentStatus";
+import TeamDocumentDownloadLogFiles from "./pages/TeamDocumentDownload";
+import TeamDocumentSignPage from "./pages/TeamDocumentSignPage";
 
 // import EmailForm from "./components/SignDocument";
 // import FileListForm from "./pages/file-list-try";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { DocumentListProvider } from "./contexts/DocumentsContext";
+import { TeamListProvider } from "./contexts/TeamContext";
+import { TeamDocumentListProvider } from "./contexts/TeamDocumentsContext";
 // import PrivateRoutes from "./utils/PrivateRout";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -26,13 +33,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();
 
-import { pdfjs } from "react-pdf";
 import Footer from "./components/Footer";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
+import PrivateRoutes from "./utils/PrivateRout";
 
 function App() {
   return (
@@ -45,54 +47,51 @@ function App() {
               <Route>
                 <Route path="/" element={<HomePage />} />
               </Route>
-              {/* <Route element={<PrivateRoutes />}>
+              <Route element={<PrivateRoutes />}>
                 <Route path="/" element={<HomePage />} />
-              </Route> */}
-            </Routes>
-            <Routes>
-              <Route path="/dashbord" element={<Dashbord />} />
-            </Routes>
-            <Routes>
-              <Route path="/account" element={<UserAccount />} />
-            </Routes>
-            <Routes>
-              <Route
-                path="/documents"
-                element={
-                  <DocumentListProvider>
-                    <Documents />
-                  </DocumentListProvider>
-                }
-              />
-            </Routes>
-            <Routes>
-              <Route path="/templates" element={<Templates />} />
-            </Routes>
-            <Routes>
-              <Route path="/signature" element={<Signature />} />
-            </Routes>
-            <Routes>
-              <Route path="/billing" element={<Billing />} />
-            </Routes>
-            <Routes>
-              <Route path="/users" element={<Users />} />
-            </Routes>
-            <Routes>
-              <Route path="/teams" element={<Teams />} />
-            </Routes>
-            <Routes>
+                <Route path="/dashbord" element={<Dashbord />} />
+                <Route path="/account" element={<UserAccount />} />
+                <Route
+                  path="/documents"
+                  element={
+                    <DocumentListProvider>
+                      <Documents />
+                    </DocumentListProvider>
+                  }
+                />
+                <Route path="/templates" element={<Templates />} />
+                <Route path="/signature" element={<Signature />} />
+                <Route path="/billing" element={<Billing />} />
+                <Route
+                  path="/team/users/:id"
+                  element={
+                    <TeamListProvider>
+                      <Users />
+                    </TeamListProvider>
+                  }
+                />
+                <Route path="/create-teams" element={<CreateTeams />} />
+                <Route
+                  path="/team-dashbord/:id"
+                  element={
+                    <TeamDocumentListProvider>
+                      <TeamListProvider>
+                        <TeamDashbord />
+                      </TeamListProvider>
+                    </TeamDocumentListProvider>
+                  }
+                />
+              </Route>
               <Route path="/login" element={<LoginPage />} />
-            </Routes>
-            <Routes>
               <Route path="/register" element={<RegisterUser />} />
-            </Routes>
-            <Routes>
               <Route
                 path="/sign-documents/:id"
                 element={<DocumentSignPage />}
               />
-            </Routes>
-            <Routes>
+              <Route
+                path="team/sign-documents/:sign_id"
+                element={<TeamDocumentSignPage />}
+              />
               <Route
                 path="/document-status/:id"
                 element={
@@ -101,8 +100,22 @@ function App() {
                   </DocumentListProvider>
                 }
               />
-            </Routes>
-            <Routes>
+              <Route
+                path="/team/document-status/:id/:sign_id"
+                element={
+                  <TeamDocumentListProvider>
+                    <TeamDocumentStatus />
+                  </TeamDocumentListProvider>
+                }
+              />
+              <Route
+                path="/team/download-document-log-file/:id/:sign_id"
+                element={
+                  <TeamDocumentListProvider>
+                    <TeamDocumentDownloadLogFiles />
+                  </TeamDocumentListProvider>
+                }
+              />
               <Route
                 path="/download-document-log-file/:id"
                 element={
@@ -110,6 +123,16 @@ function App() {
                     <DownloadDocumentLogFiles />
                   </DocumentListProvider>
                 }
+              />
+              {/* <Route
+                path="/accept-invitation/"
+                element={<AcceptInvitationComponent />}
+              /> */}
+            </Routes>
+            <Routes>
+              <Route
+                path="/accept-invitation/"
+                element={<AcceptInvitationComponent />}
               />
             </Routes>
             <Footer />

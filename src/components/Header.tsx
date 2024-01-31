@@ -140,7 +140,7 @@ const Header = () => {
                 </Link>
                 <Link
                   onClick={() => setShowhowMenu(false)}
-                  to="/teams"
+                  to="/create-teams"
                   className="link"
                 >
                   <div className="icon-wrapper">
@@ -152,7 +152,7 @@ const Header = () => {
                 </Link>
                 <Link
                   onClick={() => setShowhowMenu(false)}
-                  to="/users"
+                  to={`/team/users/${0}`}
                   className="link"
                 >
                   <div className="icon-wrapper">
@@ -162,18 +162,20 @@ const Header = () => {
                     </div>
                   </div>
                 </Link>
-                <div
-                  onClick={() => {
-                    setShowhowMenu(false);
-                    logOutUser();
-                  }}
-                  className="icon-wrapper logout-user"
-                >
-                  <div className="icon-and-name n">
-                    <LogOut className="menu-icn" />
-                    <div className="icon-name">Logout</div>
+                <Link to="/login" className="link">
+                  <div
+                    onClick={() => {
+                      setShowhowMenu(false);
+                      logOutUser();
+                    }}
+                    className="icon-wrapper logout-user"
+                  >
+                    <div className="icon-and-name n">
+                      <LogOut className="menu-icn" />
+                      <div className="icon-name">Logout</div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

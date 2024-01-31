@@ -10,7 +10,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 95%;
-  /* margin-left: -1.3em; */
+  position: relative;
 }
 
 .documents-header {
@@ -111,16 +111,14 @@
   border: none;
   background: rgb(219, 213, 213);
   color: rgb(140, 134, 134);
-  /* font-size: 12px; */
   font-size: 13px;
   line-height: 20px;
   font-weight: lighter;
   padding: 4px 8px;
 }
 
-.delete-selected-documents p {
+.check-all-box {
   color: #3d63bc;
-  /* font-size: 12px; */
   font-size: 13px;
   font-weight: lighter;
   line-height: 24px;
@@ -209,6 +207,16 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.document-list-item {
+  position: relative;
+}
+
+.check-single-box {
+  position: absolute;
+  right: 1em;
+  top: 1em;
 }
 
 @media screen and (min-width: 850px) {

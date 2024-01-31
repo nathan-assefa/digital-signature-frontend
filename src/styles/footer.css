@@ -18,13 +18,11 @@
   font-weight: lighter;
   line-height: 28px;
   text-align: left;
-  /* color: #83c2ee; */
   color: white;
   max-width: 23%;
 }
 
 .footer-menu .single-footer-menu:hover {
-  /* font-weight: bold; */
   text-decoration: underline;
 }
 
@@ -33,7 +31,7 @@
   background-image: url("../images/sign-3.jpg");
   background-size: cover;
   position: absolute;
-  right: -1.3em;
+  right: 0;
   top: -4em;
   width: 170px;
   z-index: 9999;

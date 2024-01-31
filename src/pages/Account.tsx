@@ -5,10 +5,9 @@ import axios from "axios";
 import AuthToken from "../utils/AuthToken";
 import LeftSideBar from "../components/LeftSideBar";
 import { useEffect } from "react";
-// import { useState } from "react";
+import { Toaster, toast } from "sonner";
 
 const Account = () => {
-  // const [error, setError] = useState<string | null>(null);
   const { profile, isLoading, isError } = useProfile();
 
   const accessToken = AuthToken();
@@ -46,12 +45,14 @@ const Account = () => {
         const response = await axios.patch(url, data, { headers });
         return response.data;
       } catch (error) {
+        toast.error("Error updating account");
         throw error;
       }
     },
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["profile"]);
+        toast.success("Account has been updated");
       },
     }
   );
@@ -83,6 +84,7 @@ const Account = () => {
   }
   return (
     <div>
+      <Toaster richColors />
       <div>
         <div className="account-wrapper">
           <div className="account-left-col">
@@ -93,8 +95,8 @@ const Account = () => {
             <div className="account-detail">Details</div>
             <div className="user-account-from">
               <UserAccountForm
-                isLoading={false}
-                isError={false}
+                isLoading={AccountMutation.isLoading}
+                isError={AccountMutation.isError}
                 autoFocus={true}
                 initialValue={{
                   first_name: profile?.user.first_name || "",
@@ -103,11 +105,6 @@ const Account = () => {
                 }}
                 onSubmit={onProfileUpdate}
               />
-              {/* {error && (
-                <p className="error-while-registration">
-                  <div style={{ color: "red" }}>{error}</div>
-                </p>
-              )} */}
             </div>
           </div>
         </div>

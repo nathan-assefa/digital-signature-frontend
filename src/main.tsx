@@ -12,7 +12,7 @@ import "./styles/signature.css";
 import "./styles/billing.css";
 import "./styles/billing-form.css";
 import "./styles/users.css";
-import "./styles/teams.css";
+import "./styles/team.css";
 import "./styles/Register.css";
 import "./styles/Login.css";
 import "./styles/document-sign.css";
@@ -21,6 +21,7 @@ import "./styles/signature-pad.css";
 import "./styles/single-document-status.css";
 import "./styles/download-document-log.css";
 import "./styles/footer.css";
+import "./styles/user-teams.css";
 import "./index.css";
 
 import { registerLicense } from "@syncfusion/ej2-base";

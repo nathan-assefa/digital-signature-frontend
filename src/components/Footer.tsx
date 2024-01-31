@@ -28,10 +28,10 @@ const Footer = () => {
                 <Link to="/billing" className="link">
                   <div className="single-footer-menu">Billing</div>
                 </Link>
-                <Link to="/teams" className="link">
+                <Link to="/create-teams" className="link">
                   <div className="single-footer-menu">Teams</div>
                 </Link>
-                <Link to="/users" className="link">
+                <Link to={`/team/users/${0}`} className="link">
                   <div className="single-footer-menu">User</div>
                 </Link>
                 <div className="single-footer-menu">Logout</div>

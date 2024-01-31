@@ -10,6 +10,7 @@
 
 .sigCanvas {
   background: #4b9cd7;
+  width: 100%;
 }
 
 .sign-bord {
@@ -46,4 +47,11 @@
   margin-top: 1em;
   width: 1000px;
   height: 1000px;
+}
+
+@media screen and (min-width: 850px) {
+  .pop-up-pad {
+    width: 305px;
+    height: 200px;
+  }
 }

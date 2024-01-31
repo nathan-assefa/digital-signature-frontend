@@ -65,7 +65,6 @@ const DownloadDocumentLogFiles = () => {
             </div>
           </div>
           <div className="download-document-btn">
-            {/* <div className="single-document-icon"></div> */}
             <div className="download-documents">
               <button
                 onClick={() => downloadOriginalDocument()}

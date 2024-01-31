@@ -4,26 +4,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url("../images/7_auth.jpg"); */
-  /* background-size: cover;
-  background-repeat: no-repeat; */
+}
+
+.auth-form {
+  width: 80%;
+  background: white;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .prompt-user-to-register {
   font-family: "Poppins";
   font-size: 14px;
-  color: rgb(192, 184, 184);
+  color: rgb(148, 138, 138);
 }
 
 .prompt-user-to-register .register-user {
-  color: #00c8ff;
-  font-size: 14px;
+  margin-left: 1em;
+  color: #4b9cd7;
 }
 
 .auth-label {
-  display: block;
-  color: white;
-  font-size: 16px;
+  font-family: Lato, "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgba(34, 29, 29, 0.87);
 }
 
 .auth-form-wrapper .auth-submit {
@@ -31,11 +37,19 @@
 }
 
 .auth-form-wrapper .auth-input {
-  width: 350px;
-  height: 38px;
-  border-radius: 8px;
   border: none;
-  padding-left: 14px;
+  border-bottom: 1px solid #cdc8c8;
+  display: block;
+  margin-bottom: 1em;
+  outline: none;
+  width: 95%;
+  height: 2.4em;
+  font-size: 15px;
+}
+
+.auth-form-wrapper .auth-input::placeholder {
+  font-size: 13px;
+  color: rgb(167, 160, 160);
 }
 
 .password-label {
@@ -43,13 +57,20 @@
 }
 
 .auth-submit {
-  padding: 8px 31px;
-  color: rgb(42, 42, 42);
-  font-size: 16px;
-  font-weight: bold;
-  border: 2px solid #00c8ff;
-  border-radius: 10px;
-  background: #a5a5ba;
+  width: 88px;
+  height: 36px;
+  background: var(--blue-color);
+  border: none;
+  color: white;
+  font-family: Lato, "Open Sans", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 1em;
+}
+
+@media screen and (min-width: 950px) {
+  .auth-form {
+    width: 30%;
+  }
 }

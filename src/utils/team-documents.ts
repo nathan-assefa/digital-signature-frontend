@@ -1,15 +1,17 @@
 import fetchData from "./makeRequest";
 import AuthToken from "./AuthToken";
-import { SigningDocument } from "./types";
+import { TeamDocumentSigning } from "./types";
 
 const url: string = "http://localhost:8000/api";
 
 const accessToken: string = AuthToken();
 
-export async function getDocuments(): Promise<SigningDocument[]> {
+export async function getTeamDocuments(
+  team_id: string
+): Promise<TeamDocumentSigning[]> {
   try {
-    const response: SigningDocument[] = await fetchData(
-      `${url}/sign-documents/`,
+    const response: TeamDocumentSigning[] = await fetchData(
+      `${url}/list-team-documents/${team_id}`,
       {
         method: "GET",
         headers: {
@@ -38,18 +40,19 @@ export async function removeSelectedDocuments(
   signed_ids: string[]
 ): Promise<MyResponse> {
   try {
-    const response: MyResponse = await fetchData(`${url}/remove_documents/`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + String(accessToken),
-      },
-      data: { signed_ids },
-    });
-    console.log(response);
+    const response: MyResponse = await fetchData(
+      `${url}/remove-team-documents/`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + String(accessToken),
+        },
+        data: { signed_ids },
+      }
+    );
     return response;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }

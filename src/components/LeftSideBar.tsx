@@ -110,10 +110,10 @@ const RightSideBar = () => {
             <Link to="/billing" className="link">
               <div className="single-row-right">Billing</div>
             </Link>
-            <Link to="/teams" className="link">
+            <Link to="/create-teams" className="link">
               <div className="single-row-right">Teams</div>
             </Link>
-            <Link to="/users" className="link">
+            <Link to={`/team/users/${0}`} className="link">
               <div className="single-row-right">User</div>
             </Link>
             <div className="single-row-right">Logout</div>

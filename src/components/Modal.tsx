@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { XCircle } from "lucide-react";
 
 interface ModelData {
   open: boolean;
@@ -27,7 +28,7 @@ const Modal: React.FC<ModelData> = ({ open, children, onClose, className }) => {
       <div style={OVERLAY_STLES}></div>
       <div className={modalClassName}>
         <button className="follow-button modal-btn" onClick={onClose}>
-          Close
+          <XCircle />
         </button>
         {children}
       </div>

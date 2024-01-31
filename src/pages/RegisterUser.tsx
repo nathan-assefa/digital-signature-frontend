@@ -2,9 +2,20 @@ import RegistrationForm from "../forms/UserRegistrationForm";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import LoginPage from "./LoginPage";
 
-const RegisterUser = () => {
+const RegisterUser = ({
+  destination,
+  token,
+  team_id,
+}: {
+  destination?: string;
+  token?: string;
+  team_id?: string;
+}) => {
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
   interface UpdatedProfile {
     first_name: string;
     last_name: string;
@@ -40,7 +51,12 @@ const RegisterUser = () => {
 
       try {
         const response = await axios.post(url, data, { headers });
-        console.log(response);
+        navigate(
+          `/login${destination ? `?destination=${destination}` : ""}${
+            team_id ? `&team_id=${team_id}` : ""
+          }${token ? `&token=${token}` : ""}`
+        );
+
         return response.data;
       } catch (error) {
         console.log(error);
@@ -80,6 +96,9 @@ const RegisterUser = () => {
         isError={UserRegisterMutation.isError}
         autoFocus={true}
         onSubmit={onRegistratingUser}
+        destination={destination}
+        team_id={team_id}
+        token={token}
       />
       {error && (
         <p className="error-while-registration">

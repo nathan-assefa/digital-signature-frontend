@@ -1,13 +1,10 @@
 import LeftSideBar from "../components/LeftSideBar";
 import { useDocumentList } from "../contexts/DocumentsContext";
 import Magnifier from "../assets/Magnifier";
-import TimeAgo from "../utils/timeFormat";
 import Modal from "../components/Modal";
 import { useEffect, useState } from "react";
 import PopUpToSignDocument from "../components/PopUpToSignDocument";
-import { Link } from "react-router-dom";
-import { Files, Clock3 } from "lucide-react";
-// import Documents from "../assets/documents";
+import DocumentList from "../components/DocumentList";
 
 const Docuement = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +23,6 @@ const Docuement = () => {
           <div className="documents-header">documents</div>
           <div className="document-btn">
             <div className="document-icon"></div>
-            {/* <document /> */}
             <button onClick={() => setIsOpen(true)} className="create-document">
               Add document to sign
             </button>
@@ -51,42 +47,7 @@ const Docuement = () => {
               SignRequest experience.
             </p>
           </div>
-          <div className="delete-selected-documents">
-            <button className="delete-selected">Delete selected</button>
-            <p>select all</p>
-          </div>
-          <div className="document-container">
-            {document.map((d) => (
-              <Link
-                to={`/document-status/${d.id}`}
-                className="documents link"
-                key={d.id}
-              >
-                <div className="documents-list">
-                  <div className="div-file-check">
-                    <Files className="file-check" />
-                  </div>
-                  <div className="document-name-status">
-                    <p className="document-name">{d?.document?.name}</p>
-                    <div className="doc-status">
-                      <Clock3 className="doc-st-icon" />
-                      <p className="document-status">
-                        {d?.is_signed ? "signed" : "unsigned"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="recipient-info">
-                  <div className="user-email-date">
-                    <p className="user-email">{d?.recipient.email}</p>{" "}
-                    <p className="inviting-date">
-                      {<TimeAgo date={new Date(d?.date_requested)} />}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <DocumentList document={document} doc_status_url="document-status" />
         </div>
         <div className="pop-up">
           <Modal open={isOpen} onClose={() => setIsOpen(false)}>

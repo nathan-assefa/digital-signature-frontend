@@ -3,15 +3,9 @@
   --bold-blue-color: #1569a6;
 }
 
-/* .label-input {
-  display: flex;
-  align-items: center;
-} */
-
 .bill-label {
   font-family: Lato, "Open Sans", sans-serif;
   font-weight: bold;
-  /* font-size: 12px; */
   font-size: 14px;
   line-height: 20px;
   color: rgba(34, 29, 29, 0.87);

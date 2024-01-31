@@ -7,11 +7,12 @@ const HomePage = () => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []);
+  const url = "http://127.0.0.1:8000/api/send-signing-request/";
   return (
     <div className="homepage-wrapper">
       <div className="homepage">
         <div className="home-left-col">
-          <SignDocument />
+          <SignDocument url={url} />
         </div>
         <div className="home-right-col">
           <div>

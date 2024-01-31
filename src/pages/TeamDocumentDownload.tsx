@@ -1,14 +1,13 @@
-import LeftSideBar from "../components/LeftSideBar";
 import { useParams } from "react-router-dom";
-import { useDocumentList } from "../contexts/DocumentsContext";
+import { useTeamDocumentList } from "../contexts/TeamDocumentsContext";
 import TimeAgo from "../utils/timeFormat";
 import { useEffect, useState } from "react";
 import { BookText, Clock3 } from "lucide-react";
 
-const SingleDocumentStatus = () => {
+const TeamDocumentDownloadLogFiles = () => {
   const [showButton, setShowBtton] = useState(false);
-  const { id: signDocumentId } = useParams();
-  const { document: documents } = useDocumentList();
+  const { sign_id: signDocumentId } = useParams();
+  const { document: documents } = useTeamDocumentList();
 
   const singleDocument = documents?.find((d) => d.id == signDocumentId);
 
@@ -39,16 +38,13 @@ const SingleDocumentStatus = () => {
 
   return (
     <>
-      <div className="single-document-wrapper">
-        <div className="dashbord-wrapper">
-          <LeftSideBar />
-        </div>
-        <div className="single-document-right-col">
-          <div className="single-document-header">
+      <div className="download-document-wrapper">
+        <div className="download-document-right-col">
+          <div className="download-document-header">
             <span className="docs">Documents / </span>
             <span className="doc-name"> {singleDocument?.document?.name}</span>
           </div>
-          <div className="single-doc-detail">
+          <div className="download-doc-detail">
             <BookText className="document-detail-icon" />
             <div className="doc-detail">
               <p className="doc-name">{singleDocument?.document?.name}</p>
@@ -68,8 +64,7 @@ const SingleDocumentStatus = () => {
               </div>
             </div>
           </div>
-          <div className="single-document-btn">
-            {/* <div className="single-document-icon"></div> */}
+          <div className="download-document-btn">
             <div className="download-documents">
               <button
                 onClick={() => downloadOriginalDocument()}
@@ -91,7 +86,7 @@ const SingleDocumentStatus = () => {
             <p className="recipient">Recipient</p>
             <div className="doc-sender">
               <p className="sender-email">
-                {singleDocument?.document?.owner?.email}
+                {singleDocument && singleDocument.document.team.name}
               </p>
               <p className="doc-stat">Viewed</p>
             </div>
@@ -117,10 +112,7 @@ const SingleDocumentStatus = () => {
             <div className="msg-detail">
               <p>{singleDocument?.document?.message.replace(/"/g, "")}</p>
               <p>Kind regards</p>
-              <p>
-                {singleDocument?.document?.owner?.first_name}{" "}
-                {singleDocument?.document?.owner?.last_name}
-              </p>
+              <p>{singleDocument?.document?.team.name}</p>
             </div>
           </div>
         </div>
@@ -129,4 +121,4 @@ const SingleDocumentStatus = () => {
   );
 };
 
-export default SingleDocumentStatus;
+export default TeamDocumentDownloadLogFiles;

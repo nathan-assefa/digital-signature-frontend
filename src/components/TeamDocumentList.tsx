@@ -79,7 +79,10 @@ const DocumentList: React.FC<DocumentType> = ({ document, team_id }) => {
 
   return (
     <div>
-      <div onClick={handleDeleteSelected} className="delete-selected-documents">
+      <div
+        onClick={handleDeleteSelected}
+        className="delete-selected-documents delete-selected-team-documents"
+      >
         <button className="delete-selected">Delete selected</button>
         <div className="check-all-box">
           <label>

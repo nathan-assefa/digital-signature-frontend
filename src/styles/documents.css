@@ -107,6 +107,11 @@
   margin-right: 2em;
 }
 
+.delete-selected-team-documents {
+  margin-top: 2em;
+  margin-bottom: -2.9em;
+}
+
 .delete-selected-documents .delete-selected {
   border: none;
   background: rgb(219, 213, 213);

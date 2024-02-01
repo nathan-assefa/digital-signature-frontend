@@ -144,6 +144,11 @@
 }
 
 /* For user list header */
+
+.users-list-container {
+  margin-left: -2em;
+}
+
 .members-info .team-members-list-header {
   display: flex;
   justify-content: space-between;
@@ -152,11 +157,13 @@
 }
 
 .members-info .members {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   font-family: Lato;
   color: #222222;
+  margin-left: 0.4em;
+  margin-bottom: -0.5em;
 }
 
 .members-info .member-name-header,
@@ -229,6 +236,10 @@
   .users-right-col {
     margin-right: 2em;
     margin-left: -1.3em;
+  }
+
+  .users-list-container {
+    margin-left: unset;
   }
 
   .members-info .recivier-email {

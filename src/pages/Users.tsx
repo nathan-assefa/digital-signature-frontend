@@ -119,34 +119,36 @@ const Users = () => {
                     </div>
                   </div>
                 </div>
-                <p className="members">Members</p>
-                <div className="team-members-list-header">
-                  <p className="member-name-header">Name</p>
-                  <p className="member-email-header">Email</p>
-                  <p className="member-status-header">Status</p>
-                  <button
-                    onClick={handleDeleteSelected}
-                    className="delete-selected-user"
-                  >
-                    Delete user
-                  </button>
-                </div>
-                {single_team.members.map((member) => {
-                  return (
-                    <div key={member.id} className="team-members-list">
-                      <p className="member-name">{member?.first_name}</p>
-                      <p className="member-email">{member?.email}</p>
-                      <p className="member-status">Member</p>
-                      <div className="user-check-box">
-                        <input
-                          type="checkbox"
-                          onChange={() => handleUserCheckboxChange(member.id)}
-                          checked={selectedUsers.includes(member.id)}
-                        />
+                <div className="users-list-container">
+                  <p className="members">Members</p>
+                  <div className="team-members-list-header">
+                    <p className="member-name-header">Name</p>
+                    <p className="member-email-header">Email</p>
+                    <p className="member-status-header">Status</p>
+                    <button
+                      onClick={handleDeleteSelected}
+                      className="delete-selected-user"
+                    >
+                      Delete user
+                    </button>
+                  </div>
+                  {single_team.members.map((member) => {
+                    return (
+                      <div key={member.id} className="team-members-list">
+                        <p className="member-name">{member?.first_name}</p>
+                        <p className="member-email">{member?.email}</p>
+                        <p className="member-status">Member</p>
+                        <div className="user-check-box">
+                          <input
+                            type="checkbox"
+                            onChange={() => handleUserCheckboxChange(member.id)}
+                            checked={selectedUsers.includes(member.id)}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ) : (

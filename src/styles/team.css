@@ -120,14 +120,14 @@
 .create-new-team,
 .shared-team-docs {
   font-weight: bold;
-  margin-left: 1.5em;
+  margin-left: 1em;
   margin-top: 3em;
-  font-size: 20px;
+  font-size: 17px;
   color: rgb(56, 53, 53);
 }
 
 .create-new-team {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
 .shared-team-docs {
@@ -138,10 +138,11 @@
 .team-related-info {
   color: grey;
   font-size: 14px;
-  line-height: 24px;
-  margin-left: 2.3em;
+  line-height: 18px;
+  margin-left: 1.3em;
+  margin-right: 0.1em;
   font-family: Lato;
-  margin-top: -1.2em;
+  margin-top: -1em;
 }
 
 /* .label-input {
@@ -149,30 +150,29 @@
   align-items: center;
 } */
 
-.label-and-input {
-  display: flex;
-  text-align: center;
-}
-
 .team-label,
 .invitation-label {
   font-family: Lato, "Open Sans", sans-serif;
-  font-size: 16.4px;
+  font-size: 15px;
   line-height: 20px;
   width: 190px;
   text-align: left;
-  margin-left: 1em;
   color: rgba(91, 87, 87, 0.87);
+}
+
+.invitation-label {
+  margin-left: -1.2em;
 }
 
 .team-input {
   border: none;
-  border: 1px solid #e5dada;
+  border: 1px solid #cab8b8;
   display: block;
   margin-bottom: 1em;
   outline: none;
-  width: 70%;
+  width: 85%;
   margin-right: 1.5em;
+  margin-top: 0.5em;
   padding: 1em 1.4em;
 }
 
@@ -186,9 +186,8 @@
   color: grey;
   font-size: 14px;
   line-height: 15px;
-  margin-left: 9em;
   font-family: Lato;
-  width: 68%;
+  width: 88%;
   margin-top: -0.1em;
 }
 
@@ -209,7 +208,6 @@
   height: 3em;
   display: block;
   margin-left: auto;
-  margin-right: auto;
   margin-bottom: 2em;
   border: none;
   border-radius: 0.3em;
@@ -218,6 +216,7 @@
   font-family: Poppins;
   font-size: 16px;
   letter-spacing: 0.3px;
+  margin-right: 1.5em;
 }
 
 .team-create {
@@ -250,17 +249,17 @@
 .team-members .members-icon {
   --tw-text-opacity: 1;
   color: rgb(66, 62, 62);
-  /* height: 18px;
-  width: 18px; */
   height: 20px;
   width: 20px;
-  margin-right: 0.6em;
+  margin-right: 1em;
+  margin-left: -0.8em;
 }
 
 .teams-right-col .members {
   font-weight: bold;
   font-size: 15px;
   color: rgb(56, 53, 53);
+  margin-left: -0.8em;
 }
 
 .team-activate-info {
@@ -269,6 +268,7 @@
   line-height: 15px;
   font-family: Lato;
   margin-top: -0.6em;
+  margin-left: -0.9em;
 }
 
 .invitation-label-input {
@@ -294,6 +294,7 @@
 .invitation-form-row {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .invitation-save-btn {
@@ -331,8 +332,16 @@
 }
 
 @media screen and (min-width: 850px) {
+  .create-new-team,
+  .shared-team-docs {
+    margin-left: 1.9em;
+  }
+
+  .team-related-info {
+    margin-left: 2.3em;
+  }
   .create-new-team {
-    margin-top: 2em;
+    margin-top: 5em;
   }
 
   .teams-wrapper {
@@ -357,6 +366,12 @@
     width: 190px;
     text-align: left;
     margin-left: unset;
+  }
+
+  .invitation-form-row {
+    display: flex;
+    align-items: center;
+    justify-content: unset;
   }
 
   .team-input {
@@ -387,6 +402,7 @@
   .add-logo {
     width: 60%;
     height: 4em;
+    margin-right: auto;
   }
 
   .team-create {
@@ -417,6 +433,19 @@
     scrollbar-width: none;
     cursor: pointer;
     box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+
+  .teams-right-col .members {
+    margin-left: unset;
+  }
+
+  .team-activate-info {
+    margin-left: unset;
+  }
+
+  .team-members .members-icon {
+    margin-left: unset;
+    margin-right: 0.3em;
   }
 }
 

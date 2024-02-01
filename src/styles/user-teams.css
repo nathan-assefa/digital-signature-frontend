@@ -5,18 +5,20 @@
 
 .find-teams {
   background: var(--blue-color);
-  width: 60%;
+  width: 55%;
   height: 4em;
   display: flex;
   align-items: center;
   padding-left: 1em;
+  padding-top: 0.5em;
+  padding-right: 0.5em;
   margin-left: auto;
   border: none;
   border-radius: 0.3em;
   margin-top: 1em;
   color: white;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.3px;
   font-weight: lighter;
 }
@@ -132,5 +134,8 @@
     width: 100%;
     margin-right: auto;
     margin-top: 2em;
+    padding-top: unset;
+    padding-bold: unset;
+    font-size: 14px;
   }
 }

@@ -135,6 +135,10 @@
   border-bottom: 1px solid rgb(204, 199, 199);
 }
 
+.document-container {
+  margin-left: -2em;
+}
+
 .document-container .documents-list {
   display: flex;
   align-items: center;
@@ -143,11 +147,14 @@
 
 .documents-list .file-check {
   color: rgb(137, 128, 128);
-  /* height: 18px;
-  width: 18px; */
   height: 22px;
   width: 22px;
   margin-right: 1em;
+}
+
+.document-name-status {
+  /* border: 1px solid red; */
+  width: 70%;
 }
 
 .documents-list .doc-status {
@@ -157,8 +164,6 @@
 
 .doc-st-icon {
   color: rgb(137, 128, 128);
-  /* width: 14px;
-  height: 14px; */
   height: 18px;
   width: 18px;
   margin-top: -1.4em;
@@ -166,16 +171,16 @@
 }
 
 .document-container .documents-list .document-name {
-  /* font-size: 12px; */
   font-size: 14px;
   color: rgb(68, 64, 64);
   font-weight: 600;
   line-height: 24px;
   font-family: Lato;
   white-space: nowrap;
-  width: 75%;
+  width: 65%;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* border: 1px solid red; */
 }
 
 .document-status {
@@ -190,11 +195,11 @@
 
 .user-email-date {
   margin-top: 1em;
+  /* width: 80%; */
 }
 
 .user-email-date .user-email,
 .inviting-date {
-  /* font-size: 12px; */
   font-size: 14px;
   font-weight: lighter;
   font-family: Lato;
@@ -204,7 +209,7 @@
 }
 
 .user-email {
-  width: 90%;
+  width: 80%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

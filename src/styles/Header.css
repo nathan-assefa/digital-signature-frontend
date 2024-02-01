@@ -14,7 +14,7 @@
   align-items: center;
   padding-left: 2em;
   padding-right: 2em;
-  height: 4em;
+  height: 5em;
   font-family: Lato;
 }
 
@@ -28,7 +28,6 @@
 }
 
 .header-left .e-signature {
-  /* font-size: 14px; */
   font-size: 17px;
   font-weight: 700;
   color: var(--blue-color);
@@ -79,18 +78,16 @@
 .header-icn {
   --tw-text-opacity: 1;
   color: rgb(168, 161, 161);
-  /* height: 18px;
-  width: 18px; */
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   margin-right: 0.3em;
 }
 
 .circle-user-round {
   margin-left: 1em;
   margin-right: -1em;
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
 }
 
 .right-side-pop-up-menu {
@@ -145,7 +142,7 @@
     height: 34px;
   }
   .header-left .e-signature {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .header-right .documentation,
@@ -168,5 +165,7 @@
   .circle-user-round {
     margin-left: unset;
     margin-right: 0.3em;
+    width: 30px;
+    height: 30px;
   }
 }

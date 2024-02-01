@@ -42,6 +42,7 @@
   margin-right: auto;
   background: white;
   cursor: pointer;
+  margin-bottom: -3em;
 }
 
 .create-document-in-team:hover {

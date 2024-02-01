@@ -17,7 +17,7 @@ type UserAccouontFormProps = {
   };
   formMode: "create" | "update";
   imgBtnStatus?: boolean;
-  autoFocus: boolean;
+  autoFocus?: boolean;
 };
 
 const TeamForm: React.FC<UserAccouontFormProps> = ({
@@ -32,7 +32,6 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
   },
   formMode,
   imgBtnStatus,
-  autoFocus = false,
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [team_logo, setTeamLogo] = useState<File | null>(null);
@@ -99,7 +98,6 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
               <input
                 id="name"
                 className="name-input team-input"
-                autoFocus={autoFocus}
                 value={name}
                 onChange={(e) =>
                   dispatch({ type: "setTeamName", payload: e.target.value })
@@ -113,7 +111,6 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
               <input
                 id="website"
                 className="website-input team-input"
-                autoFocus={autoFocus}
                 value={website}
                 placeholder="Optional"
                 onChange={(e) =>
@@ -131,7 +128,6 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
               <input
                 id="phoneNumber"
                 className="phoneNumber-input team-input"
-                autoFocus={autoFocus}
                 placeholder="Optional"
                 value={phoneNumber}
                 onChange={(e) =>

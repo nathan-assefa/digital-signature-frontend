@@ -8,7 +8,8 @@ const HomePage = () => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []);
-  const url = "http://127.0.0.1:8000/api/send-signing-request/";
+  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+  const url = `${SERVER_URL}/send-signing-request/`;
   return (
     <div className="homepage-wrapper">
       <div className="homepage">

@@ -30,7 +30,9 @@ const TeamDashbord = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(navRef, () => setIsOpen(false));
 
-  const SEND_SIGN_DOCUMENT_FOR_TEAM = `http://127.0.0.1:8000/api/team/${team_id}/send-signing-request/`;
+  const SERVER_ROOT_URL = import.meta.env.VITE_SERVER_ROOT_URL;
+  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+  const SEND_SIGN_DOCUMENT_FOR_TEAM = `${SERVER_URL}/team/${team_id}/send-signing-request/`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -179,7 +181,7 @@ const TeamDashbord = () => {
               <div
                 className="team-logo-img"
                 style={{
-                  backgroundImage: `url(https://signrequest.pythonanywhere.com${single_team.team_logo})`,
+                  backgroundImage: `url(${SERVER_ROOT_URL}${single_team.team_logo})`,
                 }}
               ></div>
             )}

@@ -1,15 +1,26 @@
 import { useParams } from "react-router-dom";
-import { useDocumentList } from "../contexts/DocumentsContext";
+// import { useDocumentList } from "../contexts/DocumentsContext";
 import TimeAgo from "../utils/timeFormat";
 import { useEffect, useState } from "react";
 import { BookText, Clock3 } from "lucide-react";
+import { SigningDocument } from "../utils/types";
+import { useQuery } from "@tanstack/react-query";
+import { getDocument } from "../utils/documents";
 
 const DownloadDocumentLogFiles = () => {
   const [showButton, setShowBtton] = useState(false);
-  const { id: signDocumentId } = useParams();
-  const { document: documents } = useDocumentList();
+  const { id: signing_id } = useParams();
+  // const { document: documents } = useDocumentList();
 
-  const singleDocument = documents?.find((d) => d.id == signDocumentId);
+  const { data: singleDocument } = useQuery<SigningDocument>(
+    ["sign-document"],
+    () => getDocument(signing_id!),
+    {
+      initialData: undefined,
+    }
+  );
+
+  // const singleDocument = documents?.find((d) => d.id == signDocumentId);
 
   useEffect(() => {
     if (singleDocument && singleDocument.document_log_file) {

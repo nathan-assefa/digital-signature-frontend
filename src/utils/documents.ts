@@ -24,6 +24,19 @@ export async function getDocuments(): Promise<SigningDocument[]> {
   }
 }
 
+export async function getDocument(
+  signing_id: string
+): Promise<SigningDocument> {
+  try {
+    const response: SigningDocument = await fetchData(
+      `${url}/signings/${signing_id}`
+    );
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
 interface ErrorResponse {
   detail: string;
 }

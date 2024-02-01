@@ -1,15 +1,26 @@
 import { useParams } from "react-router-dom";
-import { useTeamDocumentList } from "../contexts/TeamDocumentsContext";
+// import { useTeamDocumentList } from "../contexts/TeamDocumentsContext";
 import TimeAgo from "../utils/timeFormat";
 import { useEffect, useState } from "react";
 import { BookText, Clock3 } from "lucide-react";
+import { getTeamDocument } from "../utils/team-documents";
+import { useQuery } from "@tanstack/react-query";
+import { TeamDocumentSigning } from "../utils/types";
 
 const TeamDocumentDownloadLogFiles = () => {
   const [showButton, setShowBtton] = useState(false);
   const { sign_id: signDocumentId } = useParams();
-  const { document: documents } = useTeamDocumentList();
+  // const { document: documents } = useTeamDocumentList();
 
-  const singleDocument = documents?.find((d) => d.id == signDocumentId);
+  const { data: singleDocument } = useQuery<TeamDocumentSigning>(
+    ["sign-document"],
+    () => getTeamDocument(signDocumentId!),
+    {
+      initialData: undefined,
+    }
+  );
+
+  // const singleDocument = documents?.find((d) => d.id == signDocumentId);
 
   useEffect(() => {
     if (singleDocument && singleDocument.document_log_file) {

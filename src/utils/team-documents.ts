@@ -26,6 +26,19 @@ export async function getTeamDocuments(
   }
 }
 
+export async function getTeamDocument(
+  document_signing_id: string
+): Promise<TeamDocumentSigning> {
+  try {
+    const response: TeamDocumentSigning = await fetchData(
+      `${url}/team-document-signing/${document_signing_id}`
+    );
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
 interface ErrorResponse {
   detail: string;
 }

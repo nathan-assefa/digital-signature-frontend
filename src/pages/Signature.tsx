@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import LeftSideBar from "../components/LeftSideBar";
+import { Link } from "react-router-dom";
 
 const Signature = () => {
   useEffect(() => {
@@ -16,7 +17,13 @@ const Signature = () => {
           <div className="signatures-header">Signatures</div>
           <div className="signature-btn">
             <div className="signature-icon"></div>
-            <button className="change-signature">Change signatures</button>
+            <Link className="link" to="/billing">
+              <button className="change-signature">Change signatures</button>
+            </Link>
+            <p className="upgrate-template">
+              To store signatures, kindly upgrade your account for expanded
+              features.
+            </p>
           </div>
         </div>
       </div>

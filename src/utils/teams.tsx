@@ -2,33 +2,34 @@ import fetchData from "./makeRequest";
 import AuthToken from "./AuthToken";
 import { Team, Invitation } from "./types";
 
-const url: string = "http://localhost:8000/api";
+const url: string = import.meta.env.VITE_SERVER_URL;
 const accessToken: string = AuthToken();
 
 interface TeamAttr {
   name: string;
   website?: string;
   phoneNumber?: string;
-  file?: File | null;
+  team_logo?: File | null;
 }
 
 export async function createTeam({
   name,
   website,
   phoneNumber,
-  file,
+  team_logo,
 }: TeamAttr): Promise<Team> {
   try {
     const response = await fetchData<Team>(`${url}/teams/`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Authorization: "Bearer " + String(accessToken),
       },
-      data: { name, website, phoneNumber, file },
+      data: { name, website, phoneNumber, team_logo },
     });
     return response;
   } catch (error) {
+    console.log(error);
     throw error;
   }
 }
@@ -38,7 +39,7 @@ interface UpdateTeamAttr {
   team_id: string | undefined;
   website?: string;
   phoneNumber?: string;
-  file?: File | null;
+  team_logo?: File | null;
 }
 
 export async function updateTeam({
@@ -46,18 +47,17 @@ export async function updateTeam({
   team_id,
   website,
   phoneNumber,
-  file,
+  team_logo,
 }: UpdateTeamAttr): Promise<Team> {
   try {
     const response = await fetchData<Team>(`${url}/teams/${team_id}/`, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Authorization: "Bearer " + String(accessToken),
       },
-      data: { name, website, phoneNumber, file },
+      data: { name, website, phoneNumber, team_logo },
     });
-    console.log(response);
     return response;
   } catch (error) {
     console.log(error);

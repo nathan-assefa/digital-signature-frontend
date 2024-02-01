@@ -6,7 +6,7 @@ import InviteUserForm from "../forms/InvitationForm";
 import TeamForm from "../forms/TeamForm";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { UsersRound, XCircle } from "lucide-react";
+import { Clock3, UsersRound, XCircle } from "lucide-react";
 import { useTeamList } from "../contexts/TeamContext";
 import { Team } from "../utils/types";
 import SignDocument from "../components/SignDocument";
@@ -53,12 +53,12 @@ const TeamDashbord = () => {
     name: string;
     website: string;
     phoneNumber: string;
-    file: File | null;
+    team_logo: File | null;
   }
 
   const UpdateTeamMutation = useMutation(
     async (TeamParms: TeamAttr) => {
-      const { name, website, phoneNumber, file } = TeamParms;
+      const { name, website, phoneNumber, team_logo } = TeamParms;
 
       try {
         const response = await updateTeam({
@@ -66,7 +66,7 @@ const TeamDashbord = () => {
           team_id,
           website,
           phoneNumber,
-          file,
+          team_logo,
         });
         navigate(`/team-dashbord/${response.id}`);
       } catch (error) {
@@ -86,14 +86,14 @@ const TeamDashbord = () => {
     name: string;
     website: string;
     phoneNumber: string;
-    file: File | null;
+    team_logo: File | null;
   }): Promise<void> => {
     try {
       const updatedData: any = {
         name: formData.name,
         website: formData.website,
         phoneNumber: formData.phoneNumber,
-        file: formData.file,
+        team_logo: formData.team_logo,
       };
 
       await UpdateTeamMutation.mutateAsync(updatedData);
@@ -110,6 +110,8 @@ const TeamDashbord = () => {
             );
           } else if (responseError.phoneNumber) {
             setError(responseError.phoneNumber);
+          } else if (responseError.detail) {
+            setError(responseError.detail);
           } else {
             setError("An error occurred");
           }
@@ -173,6 +175,27 @@ const TeamDashbord = () => {
           <Toaster richColors />
           <div className="teams-header">Team dashbord</div>
           <div className="document-btn">
+            {single_team.team_logo && (
+              <div
+                className="team-logo-img"
+                style={{
+                  backgroundImage: `url(https://signrequest.pythonanywhere.com${single_team.team_logo})`,
+                }}
+              ></div>
+            )}
+            <div>
+              <div className="dashbord-team-content">
+                <p className="dashbord-team-name">{single_team.name}</p>
+                <div className="dashbord-team-status">
+                  <Clock3 className="dashbord-team-st-icon" />
+                  <p className="dashbord-team-count">Members Count: </p>
+                  <p className="dashbord-team-count-value">
+                    {single_team.members_count}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="document-icon"></div>
             <button
               onClick={() => setIsOpen(true)}
@@ -181,14 +204,7 @@ const TeamDashbord = () => {
               Add document to sign
             </button>
           </div>
-          {single_team.team_logo && (
-            <div
-              className="team-logo-img"
-              style={{
-                backgroundImage: `url(http://localhost:8000${single_team.team_logo})`,
-              }}
-            ></div>
-          )}
+
           <p className="create-new-team">Your team zone</p>
           <p className="team-related-info">
             Team content is private. Only owners or those with specific
@@ -203,8 +219,10 @@ const TeamDashbord = () => {
                 team_name: single_team?.name ?? "",
                 website: single_team?.website ?? "",
                 phoneNumber: single_team?.phoneNumber ?? "",
+                team_logo: null,
               }}
               formMode="update"
+              imgBtnStatus={single_team.team_logo ? true : false}
               onSubmit={onTeamUpdate}
             />
           </div>
@@ -238,7 +256,7 @@ const TeamDashbord = () => {
 
             <DocumentList document={document} team_id={team_id!} />
             {error && (
-              <p className="error-while-registration">
+              <p className="error-while-resign-team-doc-poppupgistration">
                 <div style={{ color: "red" }}>{error}</div>
               </p>
             )}
@@ -246,7 +264,7 @@ const TeamDashbord = () => {
         </div>
 
         {isOpen && (
-          <div ref={navRef} className="sign-team-doc-poppup">
+          <div className="sign-team-doc-poppup">
             <XCircle
               onClick={() => setIsOpen(false)}
               className="modal-btn close-modal-btn"

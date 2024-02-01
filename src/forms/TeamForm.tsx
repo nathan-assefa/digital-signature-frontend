@@ -7,14 +7,16 @@ type UserAccouontFormProps = {
     name: string;
     website: string;
     phoneNumber: string;
-    file: File | null;
+    team_logo: File | null;
   }) => Promise<void>;
   initialValue: {
     team_name: string;
     website: string;
     phoneNumber: string;
+    team_logo: File | null;
   };
   formMode: "create" | "update";
+  imgBtnStatus?: boolean;
   autoFocus: boolean;
 };
 
@@ -26,16 +28,18 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
     team_name: "",
     website: "",
     phoneNumber: "",
+    team_logo: null,
   },
   formMode,
+  imgBtnStatus,
   autoFocus = false,
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [file, setFile] = useState<File | null>(null);
+  const [team_logo, setTeamLogo] = useState<File | null>(null);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setFile(e.target.files[0]);
+      setTeamLogo(e.target.files[0]);
     }
   };
 
@@ -79,7 +83,7 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
       name,
       website,
       phoneNumber,
-      file,
+      team_logo,
     });
   }
 
@@ -161,7 +165,11 @@ const TeamForm: React.FC<UserAccouontFormProps> = ({
                 className="add-logo select-file"
                 onClick={handleButtonClick}
               >
-                {file ? "Selected" : "Insert team logo"}
+                {team_logo
+                  ? "Selected"
+                  : imgBtnStatus
+                  ? "Change team logo"
+                  : "Insert team log"}
               </button>
             </div>
 

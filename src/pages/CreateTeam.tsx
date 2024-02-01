@@ -20,15 +20,20 @@ const CreateTeam = () => {
     name: string;
     website: string;
     phoneNumber: string;
-    file: File | null;
+    team_logo: File | null;
   }
 
   const CreateTeamMutation = useMutation(
     async (TeamParms: TeamAttr) => {
-      const { name, website, phoneNumber, file } = TeamParms;
+      const { name, website, phoneNumber, team_logo } = TeamParms;
 
       try {
-        const response = await createTeam({ name, website, phoneNumber, file });
+        const response = await createTeam({
+          name,
+          website,
+          phoneNumber,
+          team_logo,
+        });
         navigate(`/team-dashbord/${response.id}`);
       } catch (error) {
         throw error;
@@ -46,15 +51,18 @@ const CreateTeam = () => {
     name: string;
     website: string;
     phoneNumber: string;
-    file: File | null;
+    team_logo: File | null;
   }): Promise<void> => {
     try {
       const updatedData: any = {
         name: formData.name,
         website: formData.website,
         phoneNumber: formData.phoneNumber,
-        file: formData.file,
       };
+
+      if (formData.team_logo) {
+        updatedData.team_logo = formData.team_logo;
+      }
 
       await CreateTeamMutation.mutateAsync(updatedData);
     } catch (error) {
@@ -102,6 +110,7 @@ const CreateTeam = () => {
                 team_name: "",
                 website: "",
                 phoneNumber: "",
+                team_logo: null,
               }}
               formMode="create"
               onSubmit={onTeamCreate}

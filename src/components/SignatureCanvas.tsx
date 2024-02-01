@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { HashLoader } from "react-spinners";
+import { useAuth } from "../contexts/AuthContext";
 
 interface SignatureId {
   signatureId: string;
@@ -13,6 +14,7 @@ interface SignatureId {
 const SignaturePad: React.FC<SignatureId> = ({ signatureId }) => {
   const [sign, setSign] = useState<SignatureCanvas | null>(null);
   const navigate = useNavigate();
+  const { username } = useAuth();
 
   const queryClient = useQueryClient();
 
@@ -48,7 +50,11 @@ const SignaturePad: React.FC<SignatureId> = ({ signatureId }) => {
   );
 
   const handleGenerator = () => {
-    mutate();
+    if (!username) {
+      navigate("/login");
+    } else {
+      mutate();
+    }
   };
 
   const handleClear = () => {

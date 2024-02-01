@@ -1,6 +1,7 @@
 import { Heart, Pipette, SearchCheck } from "lucide-react";
 import SignDocument from "./SignDocument";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   useEffect(() => {
@@ -86,14 +87,18 @@ const HomePage = () => {
             <p className="b-price">$9</p>
             <p className="per-mon">per month / 1 user</p>
             <p className="unlimited">Unlimited documents</p>
-            <button className="learn-more">Learn more</button>
+            <Link to="/billing" className="link">
+              <button className="learn-more">Learn more</button>
+            </Link>
           </div>
           <div className="business">
             <p className="pro">Business</p>
             <p className="b-price">$15</p>
             <p className="per-mon">per month / 1 user</p>
             <p className="unlimited">Unlimited documents</p>
-            <button className="learn-more">Learn more</button>
+            <Link to="/billing" className="link">
+              <button className="learn-more">Learn more</button>
+            </Link>
           </div>
         </div>
       </div>

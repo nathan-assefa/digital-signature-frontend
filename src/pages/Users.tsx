@@ -7,11 +7,12 @@ import { Clock3, UsersRound } from "lucide-react";
 import TimeAgo from "../utils/timeFormat";
 import { removeSelectedUsers } from "../utils/teams";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 const Users = () => {
   const [single_team, setSingleTeam] = useState<Team | null>(null);
   const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
-  console.log(selectedUsers);
+  const [error, setError] = useState<string | null>(null);
 
   const { id: team_id } = useParams();
   const { team: teams, isLoading: teamsLoading } = useTeamList();
@@ -37,6 +38,9 @@ const Users = () => {
       try {
         await removeSelectedUsers(user_ids, team_id!);
       } catch (err) {
+        if (axios.isAxiosError(err)) {
+          setError(err.response?.data?.detail || "An error occurred");
+        }
         throw err;
       }
     },
@@ -158,6 +162,11 @@ const Users = () => {
             </div>
           )}
         </div>
+        {error && (
+          <p className="error-while-registration">
+            <div style={{ color: "red" }}>{error}</div>
+          </p>
+        )}
       </div>
     </>
   );

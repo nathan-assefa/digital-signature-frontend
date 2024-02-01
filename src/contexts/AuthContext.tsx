@@ -45,8 +45,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
+    const url: string = import.meta.env.VITE_SERVER_URL;
 
-    const response = await fetch("http://localhost:8000/api/token/", {
+    const response = await fetch(`${url}/token/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

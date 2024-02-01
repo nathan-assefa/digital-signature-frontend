@@ -13,7 +13,7 @@
   margin-left: auto;
   border: none;
   border-radius: 0.3em;
-  margin-top: 2em;
+  margin-top: 1em;
   color: white;
   font-family: Poppins;
   font-size: 14px;
@@ -28,7 +28,7 @@
 .user-teams {
   position: absolute;
   right: 0;
-  min-height: 366px;
+  height: 366px;
   width: 320px;
   padding-top: 0.5em;
   padding-left: 1em;
@@ -39,6 +39,9 @@
   border: 1px solid rgb(197, 189, 189);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 99999999;
+  background: white;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .owner-info-container {
@@ -128,5 +131,6 @@
   .find-teams {
     width: 100%;
     margin-right: auto;
+    margin-top: 2em;
   }
 }

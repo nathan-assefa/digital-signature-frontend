@@ -36,6 +36,13 @@ export const queryClient = new QueryClient();
 import Footer from "./components/Footer";
 import PrivateRoutes from "./utils/PrivateRout";
 
+import { pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
+).toString();
+
 function App() {
   return (
     <div>
@@ -84,10 +91,10 @@ function App() {
               </Route>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterUser />} />
-              <Route
+              {/* <Route
                 path="/sign-documents/:id"
                 element={<DocumentSignPage />}
-              />
+              /> */}
               <Route
                 path="team/sign-documents/:sign_id"
                 element={<TeamDocumentSignPage />}
@@ -124,15 +131,17 @@ function App() {
                   </DocumentListProvider>
                 }
               />
-              {/* <Route
-                path="/accept-invitation/"
-                element={<AcceptInvitationComponent />}
-              /> */}
             </Routes>
             <Routes>
               <Route
                 path="/accept-invitation/"
                 element={<AcceptInvitationComponent />}
+              />
+            </Routes>
+            <Routes>
+              <Route
+                path="/sign-documents/:id"
+                element={<DocumentSignPage />}
               />
             </Routes>
             <Footer />

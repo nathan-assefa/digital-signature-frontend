@@ -30,7 +30,7 @@ const Billing = () => {
     country?: string;
   }
 
-  const apiUrl: string = "http://localhost:8000/api";
+  const apiUrl: string = import.meta.env.VITE_SERVER_URL;
 
   const AccountMutation = useMutation(
     async (updatedPost: UpdatedProfile) => {

@@ -3,7 +3,6 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import LoginPage from "./LoginPage";
 
 const RegisterUser = ({
   destination,
@@ -24,7 +23,7 @@ const RegisterUser = ({
     confirm_password: string;
     email: string;
   }
-  const apiUrl: string = "http://localhost:8000/api";
+  const apiUrl: string = import.meta.env.VITE_SERVER_URL;
 
   const UserRegisterMutation = useMutation(
     async (updatedPost: UpdatedProfile) => {

@@ -25,7 +25,7 @@ const Account = () => {
     email: string;
   }
 
-  const apiUrl: string = "http://localhost:8000/api";
+  const apiUrl: string = import.meta.env.VITE_SERVER_URL;
 
   const AccountMutation = useMutation(
     async (updatedPost: UpdatedProfile) => {
@@ -76,7 +76,7 @@ const Account = () => {
   };
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return <div className="account-page-loading">loading...</div>;
   }
 
   if (isError) {

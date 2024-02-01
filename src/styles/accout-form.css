@@ -6,7 +6,6 @@
 .account-label {
   font-family: Lato, "Open Sans", sans-serif;
   font-weight: bold;
-  /* font-size: 12px; */
   font-size: 14px;
   line-height: 20px;
   color: rgba(160, 154, 154, 0.87);
@@ -22,6 +21,7 @@
   color: rgb(139, 125, 125);
   font-size: 15px;
   margin-top: 0.2em;
+  padding-top: 0.8em;
 }
 
 .account-save {
@@ -32,18 +32,18 @@
   color: white;
   font-family: Lato, "Open Sans", sans-serif;
   line-height: 24px;
-  /* font-size: 14px; */
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 850px) {
   .account-label {
     font-family: Lato, "Open Sans", sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 20px;
-    color: rgba(160, 154, 154, 0.87);
+    color: rgba(91, 84, 84, 0.87);
   }
 
   .account-save {

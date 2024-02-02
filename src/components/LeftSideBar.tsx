@@ -62,7 +62,7 @@ const RightSideBar = () => {
                 </div>
               </div>
             </Link>
-            <Link to="/teams" className="link">
+            <Link to="/create-teams" className="link">
               <div className="icon-wrapper">
                 <div className="sigle-row-left">
                   <Users className="side-bar-icon side-bar-team-icon" />
@@ -76,11 +76,13 @@ const RightSideBar = () => {
                 </div>
               </div>
             </Link>
-            <div className="icon-wrapper">
-              <div className="sigle-row-left n">
-                <LogOut className="side-bar-icon side-bar-logout-ico" />
+            <Link to="/login" className="link">
+              <div className="icon-wrapper">
+                <div className="sigle-row-left n">
+                  <LogOut className="side-bar-icon side-bar-logout-ico" />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -116,7 +118,9 @@ const RightSideBar = () => {
             <Link to={`/team/users/${0}`} className="link">
               <div className="single-row-right">User</div>
             </Link>
-            <div className="single-row-right">Logout</div>
+            <Link to="/login" className="link">
+              <div className="single-row-right">Logout</div>
+            </Link>
           </div>
         </div>
       </div>

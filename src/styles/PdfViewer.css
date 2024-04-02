@@ -1,0 +1,59 @@
+.pdf-view-wrapper {
+  position: relative;
+  margin-top: -2em;
+}
+
+.reload-page-to-see-doc {
+  line-height: 24px;
+  font-weight: lighter;
+  font-size: 14px;
+  color: #e36d65;
+  text-align: center;
+  letter-spacing: 0.4px;
+  margin-top: 2.6em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.finish-signature {
+  position: fixed;
+  background: #4b9cd7;
+  border: none;
+  font-weight: bold;
+  color: white;
+  padding: 0.8em 0.16 em;
+  border-radius: 3em;
+  top: 1.2em;
+  left: 40%;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  z-index: 99999999999;
+  cursor: pointer;
+}
+
+.loading-spinner-for-signature {
+  position: fixed;
+  border: none;
+  font-weight: bold;
+  color: white;
+  padding: 0.8em 0.16 em;
+  border-radius: 3em;
+  top: -53em;
+  left: 40%;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  z-index: 99999999999;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+  .finish-signature {
+    top: 0.5em;
+    left: 40%;
+    width: 150px;
+    height: 60px;
+  }
+}

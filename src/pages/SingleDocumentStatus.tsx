@@ -21,7 +21,7 @@ const SingleDocumentStatus = () => {
   const downloadOriginalDocument = () => {
     const fileName = singleDocument?.document?.name;
     const aTag = document.createElement("a");
-    aTag.href = singleDocument?.document?.file!;
+    aTag.href = singleDocument?.document?.signed_document!;
     aTag.setAttribute("download", fileName!);
     document.body.appendChild(aTag);
     aTag.click();

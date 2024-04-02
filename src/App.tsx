@@ -37,6 +37,7 @@ import Footer from "./components/Footer";
 import PrivateRoutes from "./utils/PrivateRout";
 
 import { pdfjs } from "react-pdf";
+import Pspdfkit_sign_page from "./pages/Pspdfkit_sign_page";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -142,6 +143,10 @@ function App() {
               <Route
                 path="/sign-documents/:id"
                 element={<DocumentSignPage />}
+              />
+              <Route
+                path="/pspdfkit-sign-page/:id"
+                element={<Pspdfkit_sign_page />}
               />
             </Routes>
             <Footer />

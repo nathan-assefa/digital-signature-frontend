@@ -21,7 +21,7 @@ const DocumentSignPage = () => {
   );
 
   const pdfUrl = document?.document?.file;
-  console.log(pdfUrl);
+
   return (
     <div className="document-sign-page">
       <p className="click-on-canvas">
@@ -58,3 +58,47 @@ const DocumentSignPage = () => {
 };
 
 export default DocumentSignPage;
+
+// import { useQuery } from "@tanstack/react-query";
+// import { useParams } from "react-router-dom";
+// import { getDocumentToSign } from "../utils/sign-document";
+// import { SigningDocument } from "../utils/types";
+// import { useAuth } from "../contexts/AuthContext";
+// import PdfViewerComponent from "../components/PdfViewerComponent";
+
+// const DocumentSignPage = () => {
+//   // const [displaySignCanvas, setDesiplaySignCanvas] = useState(false);
+
+//   const { id: signDocumentId } = useParams();
+//   const { username } = useAuth();
+//   const { data: document } = useQuery<SigningDocument>(
+//     ["signDocument"],
+//     () => getDocumentToSign(signDocumentId!),
+//     {
+//       initialData: undefined,
+//     }
+//   );
+
+//   const pdfUrl = document?.document?.file;
+//   console.log(pdfUrl);
+//   return (
+//     <div className="document-sign-page">
+//       <p className="click-on-canvas">
+//         Click on the PDF; the signing canvas will appear for completion.
+//       </p>
+//       {!username && (
+//         <p className="user-suggestioin">
+//           Authenticate your account. Log in, revisit the email link to proceed
+//           with signing.
+//         </p>
+//       )}
+//       <div className="sign-document-wrapper">
+//         <div className="App-viewer">
+//           <PdfViewerComponent document={document?.document.file!} />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default DocumentSignPage;

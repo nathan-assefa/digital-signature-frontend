@@ -20,6 +20,7 @@ export async function getDocuments(): Promise<SigningDocument[]> {
     );
     return response;
   } catch (error) {
+    console.log(error);
     throw error;
   }
 }

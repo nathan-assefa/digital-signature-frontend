@@ -20,6 +20,7 @@ export interface Document {
   message: string;
   signings: SigningDocument[];
   date_uploaded: string | null;
+  signed_document: string | null;
 }
 
 export interface SigningDocument {

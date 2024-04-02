@@ -23,6 +23,7 @@ import "./styles/download-document-log.css";
 import "./styles/footer.css";
 import "./styles/user-teams.css";
 import "./index.css";
+import "./styles/PdfViewer.css";
 
 import { registerLicense } from "@syncfusion/ej2-base";
 

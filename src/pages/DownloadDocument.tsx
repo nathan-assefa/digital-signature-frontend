@@ -19,6 +19,7 @@ const DownloadDocumentLogFiles = () => {
       initialData: undefined,
     }
   );
+  console.log("sign_document: ", singleDocument?.document.signed_document);
 
   // const singleDocument = documents?.find((d) => d.id == signDocumentId);
 
@@ -31,7 +32,8 @@ const DownloadDocumentLogFiles = () => {
   const downloadOriginalDocument = () => {
     const fileName = singleDocument?.document?.name;
     const aTag = document.createElement("a");
-    aTag.href = singleDocument?.document?.signed_document!;
+    aTag.href = `${import.meta.env.VITE_SERVER_ROOT_URL}/${singleDocument
+      ?.document?.signed_document!}`;
     aTag.setAttribute("download", fileName!);
     document.body.appendChild(aTag);
     aTag.click();
@@ -40,7 +42,9 @@ const DownloadDocumentLogFiles = () => {
   const downloadDocumentLog = () => {
     const fileName = singleDocument?.document_log_file;
     const aTag = document.createElement("a");
-    aTag.href = singleDocument?.document_log_file!;
+    aTag.href = `${
+      import.meta.env.VITE_SERVER_ROOT_URL
+    }/${singleDocument?.document_log_file!}`;
     aTag.setAttribute("download", fileName!);
     document.body.appendChild(aTag);
     aTag.click();
